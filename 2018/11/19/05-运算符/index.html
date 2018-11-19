@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo_miccall.png">
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    python3
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2></h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="python中运算符：数学运算符、比较运算符、逻辑运算符、赋值运算符、位运算"><a href="#python中运算符：数学运算符、比较运算符、逻辑运算符、赋值运算符、位运算" class="headerlink" title="python中运算符：数学运算符、比较运算符、逻辑运算符、赋值运算符、位运算"></a>python中运算符：数学运算符、比较运算符、逻辑运算符、赋值运算符、位运算</h1><h1 id="1-数学运算符"><a href="#1-数学运算符" class="headerlink" title="1.数学运算符: +, - , * , /, %, //, **"></a>1.数学运算符: +, - , * , /, %, //, **</h1><h1 id="a-求和，和数学中的-号功能一样"><a href="#a-求和，和数学中的-号功能一样" class="headerlink" title="a. +:求和，和数学中的+号功能一样"></a>a. +:求和，和数学中的+号功能一样</h1><p>print(100 + 10)<br>print(-100 + 10)<br>print(12.5 + 3.14)</p>
+<h1 id="b-求差，和数学中的-号功能一样"><a href="#b-求差，和数学中的-号功能一样" class="headerlink" title="b. -:求差，和数学中的-号功能一样"></a>b. -:求差，和数学中的-号功能一样</h1><p>result = 99 - 23   # 将99-23的结果赋给变量result<br>print(result)</p>
+<h1 id="c-求乘积，和数学中的×号功能一样"><a href="#c-求乘积，和数学中的×号功能一样" class="headerlink" title="c. *:求乘积，和数学中的×号功能一样"></a>c. *:求乘积，和数学中的×号功能一样</h1><p>print(1.23 <em> 3)<br>print(-1.23 </em> 2)<br>print(-1.23 * -2)</p>
+<h1 id="d-除-求商，-和数学中的÷号功能一样"><a href="#d-除-求商，-和数学中的÷号功能一样" class="headerlink" title="d. /(除):求商， 和数学中的÷号功能一样"></a>d. /(除):求商， 和数学中的÷号功能一样</h1><h1 id="注意：和C语言中的-不一样"><a href="#注意：和C语言中的-不一样" class="headerlink" title="注意：和C语言中的/不一样"></a>注意：和C语言中的/不一样</h1><p>print(5/2)  # 2.5<br>print(12.5/5)</p>
+<h1 id="e-求余数"><a href="#e-求余数" class="headerlink" title="e. %:求余数"></a>e. %:求余数</h1><h1 id="注意：python中小数和整数都可以求余数"><a href="#注意：python中小数和整数都可以求余数" class="headerlink" title="注意：python中小数和整数都可以求余数"></a>注意：python中小数和整数都可以求余数</h1><p>print(5%2)<br>print(6%2)<br>print(5.0 % 0.2)</p>
+<h1 id="f-整除-：求商，结果只取商的整数部分"><a href="#f-整除-：求商，结果只取商的整数部分" class="headerlink" title="f. //(整除)：求商，结果只取商的整数部分"></a>f. //(整除)：求商，结果只取商的整数部分</h1><p>print(5 // 2)<br>print(6.4 // 2)</p>
+<h1 id="g-幂运算-求幂"><a href="#g-幂运算-求幂" class="headerlink" title="g. **(幂运算): 求幂"></a>g. **(幂运算): 求幂</h1><h1 id="x-y-求x的y次方"><a href="#x-y-求x的y次方" class="headerlink" title="x ** y : 求x的y次方"></a>x ** y : 求x的y次方</h1><h1 id="技巧：可以通过把y的值设置为1-2-0-5-来求一个数的开平方"><a href="#技巧：可以通过把y的值设置为1-2-0-5-来求一个数的开平方" class="headerlink" title="技巧：可以通过把y的值设置为1/2(0.5)来求一个数的开平方"></a>技巧：可以通过把y的值设置为1/2(0.5)来求一个数的开平方</h1><p>print(2<strong>3)<br>print(100</strong>0.5)</p>
+<h1 id="2-比较运算符-gt-lt-gt-lt"><a href="#2-比较运算符-gt-lt-gt-lt" class="headerlink" title="2.比较运算符: &gt;, &lt;, ==, !=, &gt;=, &lt;="></a>2.比较运算符: &gt;, &lt;, ==, !=, &gt;=, &lt;=</h1><h1 id="所有比较运算的结果是布尔值：True-False"><a href="#所有比较运算的结果是布尔值：True-False" class="headerlink" title="所有比较运算的结果是布尔值：True/False"></a>所有比较运算的结果是布尔值：True/False</h1><h1 id="：-判断左右两边的值是否相等，-：将右边的值赋给左边的变量"><a href="#：-判断左右两边的值是否相等，-：将右边的值赋给左边的变量" class="headerlink" title="==： 判断左右两边的值是否相等， =：将右边的值赋给左边的变量"></a>==： 判断左右两边的值是否相等， =：将右边的值赋给左边的变量</h1><p>print(100 &gt; 10)<br>print(100 &lt; 10)<br>print(12.5 == 12.5)<br>print(10 == 12.5)<br>number = 10<br>print(number == 100)  # False<br>print(number)<br>print(number != 100)  # True</p>
+<p>print(100 &gt;= 100)<br>print(10 &lt; 11)        # True<br>print(10 &lt;= 10)   # True</p>
+<h1 id="3-逻辑运算符-and-与-or-或-not-非"><a href="#3-逻辑运算符-and-与-or-或-not-非" class="headerlink" title="3.逻辑运算符: and(与), or(或), not(非)"></a>3.逻辑运算符: and(与), or(或), not(非)</h1><h1 id="逻辑运算符的结果是布尔值。运算对象也必须是布尔值"><a href="#逻辑运算符的结果是布尔值。运算对象也必须是布尔值" class="headerlink" title="逻辑运算符的结果是布尔值。运算对象也必须是布尔值"></a>逻辑运算符的结果是布尔值。运算对象也必须是布尔值</h1><h1 id="a-值1-and-值2：两个都为True-结果才是True。否则都是False"><a href="#a-值1-and-值2：两个都为True-结果才是True。否则都是False" class="headerlink" title="a. 值1 and 值2：两个都为True,结果才是True。否则都是False"></a>a. 值1 and 值2：两个都为True,结果才是True。否则都是False</h1><h1 id="and相当于生活中的并且"><a href="#and相当于生活中的并且" class="headerlink" title="and相当于生活中的并且"></a>and相当于生活中的并且</h1><p>print(‘==============================’)<br>print(True and True)   # True<br>print(False and True)  # False<br>print(True and False)  # False<br>print(False and False) # False</p>
+<h1 id="练习：设置获得奖学金的条件：绩点在3-5以上，并且操评分高于90分"><a href="#练习：设置获得奖学金的条件：绩点在3-5以上，并且操评分高于90分" class="headerlink" title="练习：设置获得奖学金的条件：绩点在3.5以上，并且操评分高于90分"></a>练习：设置获得奖学金的条件：绩点在3.5以上，并且操评分高于90分</h1><p>grade = 3.8<br>score = 95</p>
+<h1 id="条件一："><a href="#条件一：" class="headerlink" title="条件一："></a>条件一：</h1><p>grade &gt; 3.5</p>
+<h1 id="条件二："><a href="#条件二：" class="headerlink" title="条件二："></a>条件二：</h1><p>score &gt; 90</p>
+<h1 id="两个条件同时满足"><a href="#两个条件同时满足" class="headerlink" title="两个条件同时满足"></a>两个条件同时满足</h1><p>print(grade&gt;3.5 and score &gt; 90)</p>
+<h1 id="什么时候使用and-要求多个条件同时满足的时候使用and连接"><a href="#什么时候使用and-要求多个条件同时满足的时候使用and连接" class="headerlink" title="什么时候使用and: 要求多个条件同时满足的时候使用and连接"></a>什么时候使用and: 要求多个条件同时满足的时候使用and连接</h1><h1 id="b-值1-or-值2：两个都我False的时候结果才是False-否则就是True"><a href="#b-值1-or-值2：两个都我False的时候结果才是False-否则就是True" class="headerlink" title="b. 值1 or 值2：两个都我False的时候结果才是False,否则就是True"></a>b. 值1 or 值2：两个都我False的时候结果才是False,否则就是True</h1><p>print(‘=======================’)<br>print(False or False)  # False<br>print(True or False)  # True<br>print(True or True)  # True</p>
+<h1 id="练习：是否穿毛衣出门：温度低于20度，或者风速高于5级"><a href="#练习：是否穿毛衣出门：温度低于20度，或者风速高于5级" class="headerlink" title="练习：是否穿毛衣出门：温度低于20度，或者风速高于5级"></a>练习：是否穿毛衣出门：温度低于20度，或者风速高于5级</h1><p>temperature = 18<br>wind_speed = 4</p>
+<h1 id="条件一：-1"><a href="#条件一：-1" class="headerlink" title="条件一："></a>条件一：</h1><p>condition1 = temperature &lt; 20    # condition1 = True</p>
+<h1 id="条件二：-1"><a href="#条件二：-1" class="headerlink" title="条件二："></a>条件二：</h1><p>condition2 = wind_speed &gt; 5  # condition2 = False</p>
+<p>print(condition1 or condition2)  </p>
+<h1 id="什么时候使用or-要求多个条件中只要有一个条件满足"><a href="#什么时候使用or-要求多个条件中只要有一个条件满足" class="headerlink" title="什么时候使用or: 要求多个条件中只要有一个条件满足"></a>什么时候使用or: 要求多个条件中只要有一个条件满足</h1><h1 id="3-not-值：-值取反-True-gt-False-False-gt-True"><a href="#3-not-值：-值取反-True-gt-False-False-gt-True" class="headerlink" title="3. not 值： 值取反(True -&gt; False; False -&gt; True)"></a>3. not 值： 值取反(True -&gt; False; False -&gt; True)</h1><p>print(not True)<br>print(not False)</p>
+<p>age = 18</p>
+<h1 id="条件：年龄不大于18"><a href="#条件：年龄不大于18" class="headerlink" title="条件：年龄不大于18"></a>条件：年龄不大于18</h1><p>print(age &lt;= 18)<br>print(not age &gt; 18)</p>
+<h1 id="否定某个条件的时候使用not"><a href="#否定某个条件的时候使用not" class="headerlink" title="否定某个条件的时候使用not"></a>否定某个条件的时候使用not</h1><h1 id="4-python中and和or会有短路现象"><a href="#4-python中and和or会有短路现象" class="headerlink" title="4.python中and和or会有短路现象"></a>4.python中and和or会有短路现象</h1><h1 id="and的短路现象：值1-and-值2-–-gt-一旦确定值1的值是False-就不会再去执行判断值2"><a href="#and的短路现象：值1-and-值2-–-gt-一旦确定值1的值是False-就不会再去执行判断值2" class="headerlink" title="and的短路现象：值1 and 值2 –&gt; 一旦确定值1的值是False,就不会再去执行判断值2"></a>and的短路现象：值1 and 值2 –&gt; 一旦确定值1的值是False,就不会再去执行判断值2</h1><h1 id="or的短路现象：值1-or-值2-–-gt-一旦值1的是True-就不会再去执行判断值2"><a href="#or的短路现象：值1-or-值2-–-gt-一旦值1的是True-就不会再去执行判断值2" class="headerlink" title="or的短路现象：值1 or 值2 –&gt; 一旦值1的是True,就不会再去执行判断值2"></a>or的短路现象：值1 or 值2 –&gt; 一旦值1的是True,就不会再去执行判断值2</h1><p>def func1():<br>    print(‘没有发生短路’)</p>
+<p>False and func1()<br>True or func1()  </p>
+<h1 id="5-赋值运算符"><a href="#5-赋值运算符" class="headerlink" title="5.赋值运算符: =, +=, -=, *=, /=, %=, //=, **="></a>5.赋值运算符: =, +=, -=, *=, /=, %=, //=, **=</h1><h1 id="赋值运算符的左边必须是变量。赋值的时候是先算赋值符号右边的结果，然后再将结果赋给左边的变量"><a href="#赋值运算符的左边必须是变量。赋值的时候是先算赋值符号右边的结果，然后再将结果赋给左边的变量" class="headerlink" title="赋值运算符的左边必须是变量。赋值的时候是先算赋值符号右边的结果，然后再将结果赋给左边的变量"></a>赋值运算符的左边必须是变量。赋值的时候是先算赋值符号右边的结果，然后再将结果赋给左边的变量</h1><h1 id="100-100-SyntaxError-can’t-assign-to-literal"><a href="#100-100-SyntaxError-can’t-assign-to-literal" class="headerlink" title="100 = 100   # SyntaxError: can’t assign to literal"></a>100 = 100   # SyntaxError: can’t assign to literal</h1><p>result = 10 &gt; 100<br>print(result)</p>
+<h1 id="a-单纯的将-右边的值赋给左边"><a href="#a-单纯的将-右边的值赋给左边" class="headerlink" title="a. =: 单纯的将=右边的值赋给左边"></a>a. =: 单纯的将=右边的值赋给左边</h1><p>num1 = 100</p>
+<h1 id="b"><a href="#b" class="headerlink" title="b. +=, -=, *=, /=, %=, //=, **="></a>b. +=, -=, *=, /=, %=, //=, **=</h1><h1 id="要求左边的变量本身必须是有值的"><a href="#要求左边的变量本身必须是有值的" class="headerlink" title="要求左边的变量本身必须是有值的"></a>要求左边的变量本身必须是有值的</h1><h1 id="变量1-值-—-gt-变量1-变量1-值"><a href="#变量1-值-—-gt-变量1-变量1-值" class="headerlink" title="变量1 += 值  —-&gt; 变量1 = 变量1+值"></a>变量1 += 值  —-&gt; 变量1 = 变量1+值</h1><p>num2 = 100<br>num2 += 10    # 相等于: num2 = num2 + 10<br>print(num2)</p>
+<p>num3 = 4<br>num3 <em>= 2   # 相当于: num3 = num3 </em> 2<br>print(num3)</p>
+<h1 id="6-运算符的优先级："><a href="#6-运算符的优先级：" class="headerlink" title="6.运算符的优先级："></a>6.运算符的优先级：</h1><h1 id="a-数学运算符-gt-比较运算符-gt-逻辑运算符-gt-赋值运算符"><a href="#a-数学运算符-gt-比较运算符-gt-逻辑运算符-gt-赋值运算符" class="headerlink" title="a.数学运算符 &gt; 比较运算符 &gt; 逻辑运算符 &gt; 赋值运算符"></a>a.数学运算符 &gt; 比较运算符 &gt; 逻辑运算符 &gt; 赋值运算符</h1><h1 id="b-先计算优先级高的，如果优先级相等就从左往右一次运算。"><a href="#b-先计算优先级高的，如果优先级相等就从左往右一次运算。" class="headerlink" title="b.先计算优先级高的，如果优先级相等就从左往右一次运算。"></a>b.先计算优先级高的，如果优先级相等就从左往右一次运算。</h1><h1 id="c-如果有括号，先算括号里面"><a href="#c-如果有括号，先算括号里面" class="headerlink" title="c.如果有括号，先算括号里面"></a>c.如果有括号，先算括号里面</h1><h1 id="d-数学运算符中：-gt-gt"><a href="#d-数学运算符中：-gt-gt" class="headerlink" title="d.数学运算符中：* &gt; , /, % ,// &gt; +, -"></a>d.数学运算符中：*<em> &gt; </em>, /, % ,// &gt; +, -</h1><p>print((100 &gt; 200) - 50* 3)</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/11/19/05-运算符/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/11/19/05-运算符/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
