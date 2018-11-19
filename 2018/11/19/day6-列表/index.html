@@ -1,0 +1,475 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+
+
+	<!DOCTYPE html>
+	<html>
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<title>python3</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="YEYU">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+   	<!-- css -->
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- favicon -->
+	<link href="/img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	
+	<!-- font-awesome -->
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+	<body>	
+		<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="/img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+
+	<header id="header-bg-2">
+
+	
+		<div id="cd-logo"><a href="/"><img src="/img/logo.png" alt="Logo"></a></div>
+	
+	
+	<!-- motto or description -->
+		
+ 		<p class="motto"></p>
+	
+	
+	<!-- current page name or title -->
+	
+		
+		
+			
+			<p class="page-name">当前文章&nbsp;:&nbsp;《》</p>
+			
+		
+	
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		11/19/2018 
+		<style type="text/css">
+	header:after {
+		content: '';
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #222222;
+		opacity: .5;
+		z-index: -1;
+	}
+	
+	.change-header-bg{
+		font-style: normal;
+	}
+	.change-header-bg i{
+		text-align: center;
+		cursor: pointer;
+		pointer-events: bounding-box;
+	}
+	@media(max-width:512px) {
+		.change-header-bg {
+			display: none;
+			visibility: hidden;
+		}
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeHeaderBg(){
+		var random_bg = Math.floor(Math.random() * 109 + 1);
+		var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+		$("#header-bg-2").css("background-image", bg);
+	}
+</script>
+
+<span class="change-header-bg">
+	——&nbsp;<i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>	
+</span>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			
+      		<li class="fa fa-/">
+           		<a href="/" title="主页">主页</a>	
+      		</li>
+    		
+      		<li class="fa fa-/archives">
+           		<a href="/archives" title="归档">归档</a>	
+      		</li>
+    		
+      		<li class="fa fa-/categories">
+           		<a href="/categories" title="分类">分类</a>	
+      		</li>
+    		
+      		<li class="fa fa-/tags">
+           		<a href="/tags" title="标签">标签</a>	
+      		</li>
+    		
+      		<li class="fa fa-/about">
+           		<a href="/about" title="关于">关于</a>	
+      		</li>
+    		
+      		<li class="fa fa-/gallery">
+           		<a href="/gallery" title="相册">相册</a>	
+      		</li>
+    		
+    		
+        	
+		</ul>
+	</nav>
+</div>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				
+
+
+				<h1 class="am-article-title blog-text-center">
+					
+					
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/11/19/day6-列表/" itemprop="url">
+	<time datetime="2018-11-19T13:01:08.258Z" itemprop="datePublished">
+  		2018-11-19
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<p>#列表<br>1.什么是列表<br>是python中的容器类的数据类型，可以用来存储多个数据。可变的，有序的。<br>可变指的是列表中的元素的值和位置以及列表的长度可变 —&gt;决定列表可以进行增删改<br>有序 —&gt;决定可以通过下标来获取元素</p>
+<p>2.字面量<br>[元素1, 元素2, 元素3….]<br>[]  —&gt; 空列表<br>列表中的元素可以是任何类型的数据 –&gt;包括整数、浮点数、布尔、字符串、列表、字典、元祖、集合、函数、类的对象等<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">list1 = [23, 1.87, &apos;abc&apos;]   # 声明一个变量list1,给它赋了一个列表。列表有三个元素</span><br><span class="line"></span><br><span class="line"># 声明一个列表，列表中有三个元素，分别是[1,2], &apos;abc&apos;, False</span><br><span class="line">list2 = [</span><br><span class="line">    [1,2],</span><br><span class="line">    &apos;abc&apos;,</span><br><span class="line">    False</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">list3 = [</span><br><span class="line">    &#123;&apos;a&apos;: 10&#125;,</span><br><span class="line">    &#123;&apos;abc&apos;: True&#125;</span><br><span class="line">]</span><br><span class="line">print(type(list3))</span><br><span class="line"></span><br><span class="line"># 注意：变量也可以作为列表的元素</span><br><span class="line">name = &apos;路飞&apos;</span><br><span class="line">names = [&apos;小明&apos;, &apos;小花&apos;, &apos;小红&apos;, name]</span><br><span class="line">print(names)</span><br><span class="line">#    [&apos;小明&apos;, &apos;小花&apos;, &apos;小红&apos;, &apos;路飞&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>#获取列表元素</p>
+<p>######1.获取单个元素<br>列表[下标]<br>说明：列表一旦确定，列表中的每个元素的下标就确定了。下标的范围0~列表长度-1 / -1~列表长度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names = [&apos;路飞&apos;, &apos;娜美&apos;, &apos;佐罗&apos;, &apos;山治&apos;, &apos;罗宾&apos;]</span><br><span class="line">print(names[0], names[-4]) # 路飞 娜美</span><br><span class="line"># print(names[20])  # 下标不能越界</span><br></pre></td></tr></table></figure></p>
+<p>######2.获取部分元素(切片)  —&gt; 结果是个列表<br>和字符串切片一样。<br>列表[起始下标:结束下标] –&gt; 从起始下标开始，获取到结束下标前为止<br>列表[起始下标:结束下标:步长]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">names = [&apos;路飞&apos;, &apos;娜美&apos;, &apos;佐罗&apos;, &apos;山治&apos;, &apos;罗宾&apos;]</span><br><span class="line">print(names[1:3]) #[&apos;娜美&apos;, &apos;佐罗&apos;]</span><br><span class="line">print(names[:4:2]) #[&apos;路飞&apos;, &apos;佐罗&apos;]</span><br><span class="line">print(names[::-1]) #[&apos;罗宾&apos;, &apos;山治&apos;, &apos;佐罗&apos;, &apos;娜美&apos;, &apos;路飞&apos;]</span><br><span class="line">print(names[:]) #[&apos;路飞&apos;, &apos;娜美&apos;, &apos;佐罗&apos;, &apos;山治&apos;, &apos;罗宾&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>#元素的增删改查</p>
+<p>######1.增(增加元素)</p>
+<p>######a.append()<br>列表.append(元素) —&gt; 在列表的最后添加一个元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">films = [&apos;绿巨人&apos;, &apos;钢铁侠&apos;, &apos;蜘蛛侠&apos;, &apos;神奇女侠&apos;]</span><br><span class="line">films.append(&apos;美国队长&apos;)</span><br><span class="line">print(films)</span><br><span class="line">#[&apos;绿巨人&apos;, &apos;钢铁侠&apos;, &apos;蜘蛛侠&apos;, &apos;神奇女侠&apos;, &apos;美国队长&apos;]</span><br><span class="line">films.append(&apos;恐怖游轮&apos;)</span><br><span class="line">print(films)</span><br><span class="line">#[&apos;绿巨人&apos;, &apos;钢铁侠&apos;, &apos;蜘蛛侠&apos;, &apos;神奇女侠&apos;, &apos;美国队长&apos;, &apos;恐怖游轮&apos;]</span><br></pre></td></tr></table></figure></p>
+<h6 id="b-insert"><a href="#b-insert" class="headerlink" title="b.insert()"></a>b.insert()</h6><p>列表.insert(下标,元素) —&gt; 在指定的下标前去添加指定的元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">films.insert(1, &apos;双瞳&apos;)</span><br><span class="line">print(films)</span><br><span class="line">#[&apos;绿巨人&apos;, &apos;双瞳&apos;, &apos;钢铁侠&apos;, &apos;蜘蛛侠&apos;, &apos;神奇女侠&apos;, &apos;美国队长&apos;, &apos;恐怖游轮&apos;]</span><br><span class="line">films.insert(0, &apos;雷神&apos;)</span><br><span class="line">print(films)</span><br><span class="line">#[&apos;雷神&apos;, &apos;绿巨人&apos;, &apos;双瞳&apos;, &apos;钢铁侠&apos;, &apos;蜘蛛侠&apos;, &apos;神奇女侠&apos;, &apos;美国队长&apos;, &apos;恐怖游轮&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>######2.删(删除列表中的元素)</p>
+<p>######a.del<br>del 列表[下标]   —&gt;  删除列表中指定位置的元素</p>
+<p>注意：<br>del语句是python中用来删除数据的语法，可以删除任何数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">heros = [&apos;盖伦&apos;, &apos;儿童劫&apos;,&apos;维克拖&apos;, &apos;提姆&apos;, &apos;托儿索&apos;, &apos;儿童劫&apos;]</span><br><span class="line">del heros[-2]</span><br><span class="line">print(heros)</span><br><span class="line">#[&apos;盖伦&apos;, &apos;儿童劫&apos;, &apos;维克拖&apos;, &apos;提姆&apos;, &apos;儿童劫&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>######b.remove()<br>列表.remove(元素)  —&gt; 删除列表中指定的元素<br>注意：如果这个元素在列表中有多个，只删最前面的那一个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">heros = [&apos;盖伦&apos;, &apos;儿童劫&apos;,&apos;维克拖&apos;, &apos;提姆&apos;, &apos;托儿索&apos;, &apos;儿童劫&apos;]</span><br><span class="line">heros.remove(&apos;儿童劫&apos;)</span><br><span class="line">print(heros)</span><br><span class="line">#[&apos;盖伦&apos;, &apos;维克拖&apos;, &apos;提姆&apos;, &apos;儿童劫&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>######c.pop()<br>列表.pop()   —&gt; 将列表中的最后一个元素取出<br>列表.pop(下标) —&gt; 将列表中指定下标对应的元素取出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">beauty = [&apos;余婷&apos;, &apos;范冰冰&apos;, &apos;周迅&apos;, &apos;杨颖&apos;, &apos;杨幂&apos;, &apos;赵丽颖&apos;]</span><br><span class="line">person = beauty.pop()</span><br><span class="line">print(beauty, person)</span><br><span class="line">#[&apos;余婷&apos;, &apos;范冰冰&apos;, &apos;周迅&apos;, &apos;杨颖&apos;, &apos;杨幂&apos;] 赵丽颖</span><br><span class="line">person = beauty.pop(1)</span><br><span class="line">print(beauty, person)</span><br><span class="line">#[&apos;余婷&apos;, &apos;周迅&apos;, &apos;杨颖&apos;, &apos;杨幂&apos;] 范冰冰</span><br></pre></td></tr></table></figure></p>
+<p>#改</p>
+<p>######3.改(修改列表中的元素)<br>列表[下标] = 新值  —&gt; 修改指定下标对应的元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">teachers = [&apos;余婷&apos;, &apos;骆昊&apos;, &apos;王海飞&apos;, &apos;肖世荣&apos;]</span><br><span class="line">teachers[0] = &apos;YuTing&apos;</span><br><span class="line">print(teachers)</span><br><span class="line">#[&apos;YuTing&apos;, &apos;骆昊&apos;, &apos;王海飞&apos;, &apos;肖世荣&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>#遍历<br>1.遍历列表中的元素<br>for循环变量列表，拿到的就是列表中的每个元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">numbers = [12, 34, 56, 45, 90, 89]</span><br><span class="line">for x in numbers:</span><br><span class="line">    print(x)</span><br><span class="line">#12</span><br><span class="line">#34</span><br><span class="line">#56</span><br><span class="line">#45</span><br><span class="line">#90</span><br><span class="line">#89</span><br><span class="line">for index in range(len(numbers)):</span><br><span class="line">    print(index, numbers[index])</span><br><span class="line">#0 12</span><br><span class="line">#1 34</span><br><span class="line">#2 56</span><br><span class="line">#3 45</span><br><span class="line">#4 90</span><br><span class="line">#5 89</span><br></pre></td></tr></table></figure></p>
+<p>######练习<br>1.用一个列表，保存一个班5个学生的成绩，去求这个班的学生的总成绩<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scores = [89, 78, 90, 56, 89]</span><br><span class="line">sum1 = 0</span><br><span class="line">for score in scores:</span><br><span class="line">    sum1 += score</span><br><span class="line"></span><br><span class="line">print(sum1)</span><br><span class="line">#402</span><br></pre></td></tr></table></figure></p>
+<p>2.用一个列表，保存多个人的名字(英文的), 将列表中所有的人的名字首字母大写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">names = [&apos;zhangsan&apos;, &apos;XiaoMing&apos;, &apos;lisi&apos;, &apos;wangwu&apos;]</span><br><span class="line"></span><br><span class="line"># 方法1：</span><br><span class="line"># 下标</span><br><span class="line">index = 0</span><br><span class="line">for name in names:</span><br><span class="line">    # 取出首字母</span><br><span class="line">    first = name[0]</span><br><span class="line">    # 判断首字母是否是大写</span><br><span class="line">    if first.isupper():</span><br><span class="line">        index += 1</span><br><span class="line">        continue</span><br><span class="line"></span><br><span class="line">    # 新的名字</span><br><span class="line">    new_name = name.title()</span><br><span class="line">    # 修改名字</span><br><span class="line">    names[index] = new_name</span><br><span class="line"></span><br><span class="line">    index += 1</span><br><span class="line">print(names)</span><br><span class="line">#[&apos;Zhangsan&apos;, &apos;XiaoMing&apos;, &apos;Lisi&apos;, &apos;Wangwu&apos;]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">names = [&apos;zhangsan&apos;, &apos;Hu&apos;, &apos;HaHa&apos;, &apos;XiaoMing&apos;, &apos;lisi&apos;, &apos;wangwu&apos;, &apos;Head&apos;]</span><br><span class="line"># 方法二：</span><br><span class="line">for index in range(len(names)):</span><br><span class="line">    name = names[index]</span><br><span class="line">    # 如果是小写</span><br><span class="line">    if name[0].islower():</span><br><span class="line">        names[index] = name.title()</span><br><span class="line">print(names)</span><br><span class="line">#[&apos;Zhangsan&apos;, &apos;Hu&apos;, &apos;HaHa&apos;, &apos;XiaoMing&apos;, &apos;Lisi&apos;, &apos;Wangwu&apos;, &apos;Head&apos;]</span><br></pre></td></tr></table></figure></p>
+<p> 3.删除上一个列表中，首字母是H的人的名字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">names = [&apos;Zhangsan&apos;,&apos;XiaoMing&apos;, &apos;Lisi&apos;, &apos;Wangwu&apos;]</span><br><span class="line">names[:] = [&apos;Zhangsan&apos;,&apos;HaHa&apos;, &apos;XiaoMing&apos;, &apos;Lisi&apos;, &apos;Wangwu&apos;, &apos;Head&apos;]</span><br><span class="line"></span><br><span class="line">for name in names[:] 相等于：</span><br><span class="line">new = names[:]</span><br><span class="line">for name in new:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">for name in names[:]:</span><br><span class="line">    if name[0] == &apos;H&apos;:</span><br><span class="line">        names.remove(name)</span><br><span class="line">print(names)</span><br><span class="line">#[&apos;Zhangsan&apos;, &apos;XiaoMing&apos;, &apos;Lisi&apos;, &apos;Wangwu&apos;]</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">names = [&apos;zhangsan&apos;, &apos;HaHa&apos;,&apos;Hu&apos;, &apos;XiaoMing&apos;, &apos;lisi&apos;, &apos;wangwu&apos;, &apos;Huo&apos;]</span><br><span class="line">index = 0</span><br><span class="line">while index &lt; len(names):</span><br><span class="line">    name = names[index]</span><br><span class="line">    if name[0] == &apos;H&apos;:</span><br><span class="line">        del names[index]</span><br><span class="line">        continue</span><br><span class="line">    index += 1</span><br><span class="line">print(names)</span><br><span class="line">#[&apos;zhangsan&apos;, &apos;XiaoMing&apos;, &apos;lisi&apos;, &apos;wangwu&apos;]</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>用一个列表保存一个班的学生的成绩，删除成绩中不及格的学生<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">grade = [12, 78, 98, 78]</span><br><span class="line">for x in new:</span><br><span class="line">    if x &lt; 60:</span><br><span class="line">        grade.remove(x)</span><br><span class="line"></span><br><span class="line">print(grade)</span><br><span class="line">#[78, 98, 78]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>#列表的相关方法</p>
+<p>######in和not in<br>元素 in 列表2   —&gt;  元素n是否是列表2的元素<br>元素 not in 列表2 —&gt; 元素n是否不是列表2的元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print([1, 2, 3] in [1, 2, 3, 4, 5])   # False</span><br><span class="line">print([1, 2, 3] in [[1, 2, 3], 2, 3, 4])  # True</span><br><span class="line"></span><br><span class="line">print(&apos;abc&apos; in [1, 2, 3, &apos;abc&apos;]) #True</span><br></pre></td></tr></table></figure></p>
+<h6 id="2-len"><a href="#2-len" class="headerlink" title="2.len()"></a>2.len()</h6><p>len(列表)  –&gt; 获取指定列表的长度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(len([1, 2, 3, 4, 5]))</span><br><span class="line">#5</span><br></pre></td></tr></table></figure></p>
+<h6 id="3-max-和min"><a href="#3-max-和min" class="headerlink" title="3.max()和min()"></a>3.max()和min()</h6><p>max(列表)  –&gt; 获取列表中最大的元素<br>min(列表)  –&gt; 获取列表中最小的元素<br>要求：a.列表中的元素类型要一致  b.列表中的元素是支持&gt;操作的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1, 2, 3, 100, 90]</span><br><span class="line">print(&apos;max:&apos;,max(list1))</span><br><span class="line">#max: 100</span><br><span class="line">print(&apos;min:&apos;, min(list1))</span><br><span class="line">#min: 1</span><br></pre></td></tr></table></figure></p>
+<h5 id="4-list"><a href="#4-list" class="headerlink" title="4.list()"></a>4.list()</h5><p>list(数据) —&gt; 将指定的数据转换成列表<br>注意：只有序列可以被转换成列表<br>序列：字符，range, 列表,字典,元祖，集合,迭代器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(list(&apos;abcde&apos;))</span><br><span class="line">#[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;, &apos;e&apos;]</span><br><span class="line">print(list(range(5)))</span><br><span class="line">#[0, 1, 2, 3, 4]</span><br></pre></td></tr></table></figure></p>
+<h6 id="5-count"><a href="#5-count" class="headerlink" title="5.count()"></a>5.count()</h6><p>列表.count(元素)  –&gt; 获取指定的元素在列表中的个数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names = [&apos;千与千寻&apos;, &apos;龙猫&apos;, &apos;哈尔的移动城堡&apos;, &apos;风之谷&apos;, &apos;千与千寻&apos;]</span><br><span class="line">print(names.count(&apos;千与千寻&apos;))    # 2</span><br><span class="line">print(names.count(&apos;幽灵公主&apos;))    # 0</span><br></pre></td></tr></table></figure></p>
+<h6 id="6-extend"><a href="#6-extend" class="headerlink" title="6.extend()"></a>6.extend()</h6><p>列表.extend(序列) –&gt; 将序列中的元素添加到列表中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">names1 = [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]</span><br><span class="line">names.extend(&apos;abc&apos;)</span><br><span class="line">print(names)</span><br><span class="line">#[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line"></span><br><span class="line">names1 = [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]</span><br><span class="line">names.extend(range(3))</span><br><span class="line">print(names)</span><br><span class="line">#[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, 0, 1, 2]</span><br><span class="line"></span><br><span class="line">names1 = [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;]</span><br><span class="line">names1.extend([&apos;11&apos;, &apos;22&apos;])</span><br><span class="line">print(names1)</span><br><span class="line">#[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, 0, 1, 2, &apos;11&apos;, &apos;22&apos;]</span><br></pre></td></tr></table></figure></p>
+<h5 id="7-index"><a href="#7-index" class="headerlink" title="7.index()"></a>7.index()</h5><p>列表.index(元素) –&gt; 获取指定的元素在列表中的下标<br>注意：如果元素在列表中有多个，获取最前面的元素的下标<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">names = [&apos;沉默的羔羊&apos;, &apos;肖生克的救赎&apos;, &apos;阿甘正传&apos;, &apos;霸王别姬&apos;, &apos;阿甘正传&apos;]</span><br><span class="line">print(names.index(&apos;肖生克的救赎&apos;))</span><br><span class="line"># 1</span><br><span class="line">print(names.index(&apos;阿甘正传&apos;))</span><br><span class="line"># 2</span><br><span class="line"># print(names.index(&apos;abc&apos;))  # 如果元素不存在，会报错, ValueError</span><br></pre></td></tr></table></figure></p>
+<p>######8.reverse()<br>列表.reverse()  –&gt; 将列表中的元素倒序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">names = [&apos;沉默的羔羊&apos;, &apos;肖生克的救赎&apos;, &apos;阿甘正传&apos;, &apos;霸王别姬&apos;, &apos;阿甘正传&apos;]</span><br><span class="line">names1.reverse()</span><br><span class="line">print(names1)</span><br><span class="line">#[&apos;阿甘正传&apos;, &apos;霸王别姬&apos;, &apos;阿甘正传&apos;, &apos;肖生克的救赎&apos;, &apos;沉默的羔羊&apos;]</span><br></pre></td></tr></table></figure></p>
+<h6 id="9-sort-和-sorted"><a href="#9-sort-和-sorted" class="headerlink" title="9.sort() 和 sorted"></a>9.sort() 和 sorted</h6><p>列表.sort()  –&gt; 将列表中的元素升序排序(从小到大)<br>列表.sort(reverse=True) –&gt; 将列表中的元素降序排序(从大到小)<br>sorted(列表)  –&gt; 将列表中的元素升序排序后产生一个新的列表(不会改变原列表)<br>sorted(列表,reverse=True)  –&gt; 将列表中的元素降序排序后产生一个新的列表(不会改变原列表)<br>要求：a.列表中的元素类型要一致  b.列表中的元素是支持&gt;操作的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">scores = [12, 89, 78, 90, 78, 100]</span><br><span class="line">scores.sort()</span><br><span class="line">print(scores)</span><br><span class="line">#[12, 78, 78, 89, 90, 100]</span><br><span class="line"></span><br><span class="line">scores = [12, 89, 78, 90, 78, 100]</span><br><span class="line">scores.sort(reverse=True)</span><br><span class="line">print(scores)</span><br><span class="line">#[100, 90, 89, 78, 78, 12]</span><br><span class="line"></span><br><span class="line">scores = [12, 89, 78, 90, 78, 100]</span><br><span class="line">new_scores = sorted(scores, reverse=True)</span><br><span class="line">print(new_scores)</span><br><span class="line">#[100, 90, 89, 78, 78, 12]</span><br></pre></td></tr></table></figure></p>
+<h6 id="10-clear"><a href="#10-clear" class="headerlink" title="10.clear()"></a>10.clear()</h6><p>列表.clear()  –&gt; 清空列表中的元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scores = [12, 89, 78, 90, 78, 100]</span><br><span class="line">scores.clear()</span><br><span class="line">print(scores)</span><br><span class="line"># []</span><br></pre></td></tr></table></figure></p>
+<h6 id="11-copy"><a href="#11-copy" class="headerlink" title="11.copy()"></a>11.copy()</h6><p>列表.copy()  –&gt; 将列表中的元素复制一份产生一个新的列表,和列表[:]的功能一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1, 2, 3, &apos;abc&apos;]</span><br><span class="line">new = list1.copy()</span><br><span class="line">print(new, id(list1), id(new))</span><br><span class="line">#[1, 2, 3, &apos;abc&apos;] 4479231368 4479232520</span><br></pre></td></tr></table></figure></p>
+<p>#列表的相关运算</p>
+<p>######1.+<br>列表1 + 列表2 —&gt; 将列表1和列表2中的元素合并，产生一个新的列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1, 2, 3]</span><br><span class="line">list2 = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line">print(list1 + list2)</span><br><span class="line">#1, 2, 3, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>######2.<em><br>列表</em>n  —&gt; 将列表中的元素重复n次，产生一个新的列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1, 2, 3]</span><br><span class="line">print(list1*3)</span><br><span class="line">#[1, 2, 3, 1, 2, 3, 1, 2, 3]</span><br></pre></td></tr></table></figure></p>
+<h6 id="3-比较运算"><a href="#3-比较运算" class="headerlink" title="3.比较运算"></a>3.比较运算</h6><p>列表1 == 列表2 —&gt; 判断两个列表中的元素是否相等<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1, 2, 3]</span><br><span class="line">print([1, 2, 3] == [2, 1, 3])   # False</span><br><span class="line">print([1, 2, 3] == [1, 2, 3])   # True</span><br></pre></td></tr></table></figure></p>
+<p>补充：比较是否相等的两种方式，== 和 is<br>一个数据有id、value和type三个元素。<br>id –&gt; 地址(数据在内存中存储的地址)<br>value –&gt; 数据的值<br>type –&gt; 数据的类型<br>python中变量存储数据的时候存的时候数据的地址(id)，取出来用的值(value)</p>
+<p>== –&gt; 判断的是值是否相等<br>is –&gt; 判断的是地址是否相等(面试！)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1, 2, 3]</span><br><span class="line">list2 = [1, 2, 3]</span><br><span class="line">list3 = list1</span><br><span class="line">print(id(list1), id(list2), id(list3))</span><br><span class="line"></span><br><span class="line">print(list1 == list2)   # True</span><br><span class="line">print(list1 is list2)   # False</span><br><span class="line">print(list1 is list3)   # True</span><br></pre></td></tr></table></figure></p>
+<p>#列表赋值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">list1 = [&apos;a&apos;, &apos;aa&apos;, &apos;aaa&apos;]</span><br><span class="line">list2 = list1   # 将list1中的数据的id赋给list2</span><br><span class="line"></span><br><span class="line">list2.append(&apos;aaaa&apos;)</span><br><span class="line">print(list2)</span><br><span class="line">#[&apos;a&apos;, &apos;aa&apos;, &apos;aaa&apos;, &apos;aaaa&apos;]</span><br><span class="line">print(list1)</span><br><span class="line">#[&apos;a&apos;, &apos;aa&apos;, &apos;aaa&apos;, &apos;aaaa&apos;]</span><br><span class="line"></span><br><span class="line">list3 = list1[:]  # 将list1中的数据拷贝一份，存到新的内存区域中，然后将新的地址给list3</span><br><span class="line">list3.pop(0)</span><br><span class="line">print(list3)</span><br><span class="line">#[&apos;aa&apos;, &apos;aaa&apos;, &apos;aaaa&apos;]</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">总结：用一个列表给另外一个列表赋值的时候，要注意如果是直接赋值，</span><br><span class="line">可能会因为修改其他一个列表的元素而影响另外一个列表。如果不想相互影响，赋值的时候赋切片或者拷贝</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">list1 = [1, 2, 3]</span><br><span class="line">list2 = list1</span><br><span class="line">list1 = [1, 200, 3]</span><br><span class="line">list1[1] = &apos;abc&apos;</span><br><span class="line">print(list1, list2)</span><br><span class="line">#[1, &apos;abc&apos;, 3] [1, 2, 3]</span><br></pre></td></tr></table></figure></p>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+    	<li class="am-pagination-prev">
+   		<a class="pull-left" href="/2018/11/19/多线程/" title="">
+      		&laquo; 上一篇
+		</a>
+		</li>
+	
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/11/19/day5-循环与分支/" title="">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
+</div>
+
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
+
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#b-insert"><span class="post-toc-text">b.insert()</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-len"><span class="post-toc-text">2.len()</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3-max-和min"><span class="post-toc-text">3.max()和min()</span></a></li></ol><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-list"><span class="post-toc-text">4.list()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#5-count"><span class="post-toc-text">5.count()</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#6-extend"><span class="post-toc-text">6.extend()</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-index"><span class="post-toc-text">7.index()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#9-sort-和-sorted"><span class="post-toc-text">9.sort() 和 sorted</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#10-clear"><span class="post-toc-text">10.clear()</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#11-copy"><span class="post-toc-text">11.copy()</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3-比较运算"><span class="post-toc-text">3.比较运算</span></a></li></ol>
+			</li></nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
+	
+
+	</div>
+</div>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<footer>
+	<div class="blog-text-center">
+		<div class="theme-annie-social">
+				
+				
+					<a href="http://github.com/" title="Github" target="_blank"><i class="fa fa-github"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Weibo" target="_blank"><i class="fa fa-weibo"></i>&nbsp;</a>
+				
+				
+					<a href="http://github.com/" title="Email" target="_blank"><i class="fa fa-envelope-o"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="QQ" target="_blank"><i class="fa fa-qq"></i>&nbsp;</a>
+					
+				
+					<a href="http://github.com/" title="Twitter" target="_blank"><i class="fa fa-twitter"></i>&nbsp;</a>
+						
+				
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			
+				&copy; 2017 - 2018, content by YEYU. All Rights Reserved.			       	
+			
+		</div>
+	</div>
+
+	<div class="blog-text-center">
+		<div class="theme-annie-copyright">
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.		
+		</div>
+	</div>
+</footer>
+		<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<style>
+	.motto {
+		color: #000000;
+		font-size: 20px;
+		margin: 100px 25% 0;
+		width: 50%;
+		line-height: 1.4;
+		font-family:"KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+		text-align: center;
+	}
+	@media(max-width: 890px) {
+		.motto {	
+			margin: 100px 10% 0;
+			width: 80%;
+		}
+	}
+	@media(max-width: 890px) {
+		.motto {
+			margin: 100px 5% 0;
+			width: 90%;
+		}
+	}
+</style>
+
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/toc.js"></script>
+
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(https://XXX-youname-XXX.github.io/Random-img/' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>
+		
+		<!--back to top-->
+        <style type="text/css">
+	#totop {
+		background: white;
+		border-radius: 50%;
+		position: fixed;
+		right: 5.4%;
+		bottom: 80px;
+		cursor: pointer;
+	}
+	
+	#totop a {
+		color: #474747;
+		background-color: transparent;
+		padding: 10px;
+		text-decoration: none;
+	}
+	
+	@media(max-width:512px) {
+		#totop {
+			display: none;
+			visibility: hidden;
+		}
+	}
+</style>
+
+
+	<div id="totop">
+  		<a href="javascript:;" class="fa fa-arrow-up"></a>
+	</div>
+
+	</body>
+	</html>
+
