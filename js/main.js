@@ -1,132 +1,147 @@
-$(function () {
+/* 
+ * 2018.8.26 modify by lcc
+ * based on the js plugin http://www.htmleaf.com/jQuery/Menu-Navigation/20141212771.html
+ * based on other unknown sources...
+ * thanks for their open sources!
+*/
+jQuery(document).ready(function($) {
 
-	$('.post__main img').on('click', function () {
-		var $img = $(this);
+	"use strict";
 
-		$.fancybox.open([{
-			src: $img.attr('src'),
-			type: 'image'
-		}]);
-	});
+	/* Preloader */
+	var Annie_Preloader = function() {
+		$(window).on("load", function() {
+			// fade out the loading animation
+			$("#status").fadeOut();
 
-	$('[data-fancybox]').fancybox({
-		// closeClickOutside: false, 
-		image: {
-			protect: true
-		}
-	});
+			//fade out the white DIV that covers the website
+			$("#preloader").delay(400).fadeOut("slow");
+		});
+	};
 
-	// key bind
+	/* Nav */
+	var Annie_Nav = function() {
+		// browser window scroll (in pixels) after which the "menu" link is shown
+		var offset = 300;
+		var navigationContainer = $('#cd-nav');
+		var mainNavigation = navigationContainer.find('#cd-main-nav ul');
 
-	// j  down
-	// k  top
-	// t  page top
-	// b  page bottom
+		//hide or show the "menu" link
+		checkMenu();
 
-	// i  go index
-	var $body = $('html');
+		$(window).scroll(function() {
+			checkMenu();
+		});
 
-	var isKeydown = false;
-	$body.on('keydown', function (e) {
-		// console.log(e.which, 'key down');
+		//open or close the menu clicking on the bottom "menu" link
+		$('.cd-nav-trigger').on('click', function() {
+			$(this).toggleClass('menu-is-open');
 
-		switch (e.which) {
-			case 74: // j down
-				if (!isKeydown) {
-					isKeydown = true;
-					requestAnimationFrame(function animate() {
-						var curTop = window.scrollY;
-						window.scrollTo(0, curTop + 15);
+			//we need to remove the transitionEnd event handler (we add it when scolling up with the menu open)
+			mainNavigation.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend').toggleClass('is-visible');
+		});
 
-						if (isKeydown) {
-							requestAnimationFrame(animate);
-						}
+		function checkMenu() {
+			if($(window).scrollTop() > offset && !navigationContainer.hasClass('is-fixed')) {
+				navigationContainer.addClass('is-fixed').find('.cd-nav-trigger').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+					mainNavigation.addClass('has-transitions');
+				});
+			} else if($(window).scrollTop() <= offset) {
+
+				//check if the menu is open when scrolling up
+				if(mainNavigation.hasClass('is-visible') && !$('html').hasClass('no-csstransitions')) {
+					//close the menu with animation
+					mainNavigation.addClass('is-hidden').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+						//wait for the menu to be closed and do the rest
+						mainNavigation.removeClass('is-visible is-hidden has-transitions');
+						navigationContainer.removeClass('is-fixed');
+						$('.cd-nav-trigger').removeClass('menu-is-open');
 					});
+
+					//check if the menu is open when scrolling up - fallback if transitions are not supported
+				} else if(mainNavigation.hasClass('is-visible') && $('html').hasClass('no-csstransitions')) {
+					mainNavigation.removeClass('is-visible has-transitions');
+					navigationContainer.removeClass('is-fixed');
+					$('.cd-nav-trigger').removeClass('menu-is-open');
+
+					//scrolling up with menu closed
+				} else {
+					navigationContainer.removeClass('is-fixed');
+					mainNavigation.removeClass('has-transitions');
 				}
+			}
+		}
+	};
 
-				break;
+	/* Random bg-img for header*/
+	var Annie_Random = function() {
+		//generate a random img that pre_name 'from 0 to 110'
+		var random_bg = Math.floor(Math.random() * 109 + 1);
 
-			case 75: // k up
-				if (!isKeydown) {
-					isKeydown = true;
-					requestAnimationFrame(function animate() {
-						var curTop = window.scrollY;
-						window.scrollTo(0, curTop - 15);
+		//var bg = 'url(/img/random/' + random_bg + '.jpg)';
+		var bg = 'url(/img/random/' + random_bg + '.jpg)';
 
-						if (isKeydown) {
-							requestAnimationFrame(animate);
-						}
-					});
-				}
+		$("#header-bg-2").css("background-image", bg);
+	};
 
-				break;
+	/* ToTop */
+	var Annie_ToTop = function() {
+		var upperLimit = 500;
 
-			case 191: // shift + / = ? show help modal
-				break;
+		// Our scroll link element
+		var scrollElem = $('#totop');
 
-				// 16 shift
-			case 84: // t
-				window.scrollToTop(1);
-				break;
+		// Scroll to top speed
+		var scrollSpeed = 500;
 
-			case 66: // b
-				window.scrollToBottom();
-				break;
+		scrollElem.hide();
 
-			case 78: // n half
-				window.scrollPageDown(1);
-				break;
+		$(window).scroll(function() {
+			var scrollTop = $(document).scrollTop();
 
-			case 77: // m
-				window.scrollPageUp(1);
-				break;
+			if(scrollTop > upperLimit) {
+				$(scrollElem).stop().fadeTo(300, 1);
+			} else {
+				$(scrollElem).stop().fadeTo(300, 0);
+			}
+		});
+
+		$(scrollElem).click(function() {
+			$('html, body').animate({
+				scrollTop: 0
+			}, scrollSpeed);
+			return false;
+		});
+	};
+
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			var obj = $('#annie-comment-container');
 		}
 
-	});
+		var obutton = document.getElementById("annie-comment-button");
+		var odiv = document.getElementById("annie-comment-container");
+		//var obutton = $('#annie-comment-button');
+		//var odiv = $('#annie-comment-container');	
+		if('obutton') {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
 
-	$body.on('keyup', function (e) {
-		isKeydown = false;
-	});
+	/* other js function */
+	/* ... */
 
-	// print hint
-
-	var comments = [
-		'',
-		'                    .::::.            快捷键：',
-		'                  .::::::::.            j：下移',
-		'                 :::::::::::            k：上移',
-		"             ..:::::::::::'             t：移到最顶",
-		"           '::::::::::::'               b：移到最底",
-		'             .::::::::::                n：下移很多',
-		"        '::::::::::::::..               m：上移很多",
-		'             ..::::::::::::.',
-		'           ``::::::::::::::::',
-		"            ::::``:::::::::'        .:::.",
-		"           ::::'   ':::::'       .::::::::.",
-		"         .::::'      ::::     .:::::::'::::.",
-		"        .:::'       :::::  .::::::::'  ':::::.",
-		"       .::'        :::::::::::::::'      ':::::.",
-		"      .::'        :::::::::::::::'          ':::.",
-		"  ...:::          :::::::::::::'              ``::.",
-		" ```` ':.         '::::::::::'                  ::::..",
-		"                    ':::::'                    ':'````..",
-		''
-	];
-
-	comments.forEach(function (item) {
-		console.log('%c' + item, 'color: #399c9c');
-	});
-
-	$('.btn-reward').on('click', function (e) {
-		e.preventDefault();
-
-		var $reward = $('.reward-wrapper');
-		$reward.slideToggle();
-	});
-
-	$('body').addClass('queue-in');
-	setTimeout(function() {
-		$('body').css({ opacity: 1}).removeClass('queue-in');
-	}, 500);
-
+	/* Initialize */
+	(function Annie_Init() {
+		Annie_Preloader();
+		Annie_Nav();
+		//Annie_Random();
+		Annie_ToTop();
+		//Annie_Comment();
+	})();
 });
