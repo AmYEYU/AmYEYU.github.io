@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>微信呼死你</title>
+	<title>拷贝和应用</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《微信呼死你》</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《拷贝和应用》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/11/20/itchat库 微信呼死你/" itemprop="url">		
-			微信呼死你		
+		<a href="/2018/11/20/拷贝和应用/" itemprop="url">		
+			拷贝和应用		
 		</a>
 	
 
@@ -170,7 +170,7 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/20/itchat库 微信呼死你/" itemprop="url">
+						<a href="/2018/11/20/拷贝和应用/" itemprop="url">
 	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
   		2018-11-20
   </time>
@@ -187,8 +187,9 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>#微信呼死你</p>
-<p>###微信的一个库 可以拿到微信的所有好友信息，利用UserName的信息给指定的用户发信息，在利用时间模块可以在指定的间隔时间给用户发送信息,运行的时候需要用微信扫码下二维码登录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import itchat</span><br><span class="line"></span><br><span class="line"># 登录微信</span><br><span class="line">itchat.auto_login(hotReload=True)</span><br><span class="line"># 获取好友信息</span><br><span class="line">friends = itchat.get_friends()</span><br><span class="line">print(list)</span><br><span class="line">for items in friends:</span><br><span class="line">    firend = dict(items)</span><br><span class="line">    print(firend)</span><br><span class="line">    # 群发</span><br><span class="line">    # itchat.send(&apos;哈喽，我在用python给你发信息呢&apos;,firend[UserName])</span><br><span class="line">import time</span><br><span class="line">while True:</span><br><span class="line">    # time.sleep(1)</span><br><span class="line">    # itchat.send(&apos;哈喽，我在用python给你发信息呢～要不要试一下轰炸呼死你&apos;,friends[1][&apos;UserName&apos;])</span><br><span class="line">    print(friends[&apos;UserName&apos;])</span><br><span class="line">    # itchat.send(&apos;哈哈哈哈成功！&apos;, &quot;@c1902561fdea246959d52f8d128553b625675c857d69da2242229fa611399f0e&quot;)</span><br><span class="line">    itchat.send(&apos;轰炸信息来啦！&apos;, &quot;&quot;)</span><br></pre></td></tr></table></figure></p>
+						<p>#拷贝<br>将变量中的值赋值一份，产生新的数据。然后将新的数据对应的地址返回<br>列表拷贝可以： [:]    copy()  属于浅拷贝<br>浅拷贝：直接拷贝地址<br>深拷贝：将地址对应值拷贝，产生新的地址<br>import copy （导入拷贝模块）<br>copy.copy(对象)：浅拷贝<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a1 = [1, 2]</span><br><span class="line">a2 = &#123;&apos;a&apos;: 10&#125;</span><br><span class="line">list1 = [a1, a2]</span><br><span class="line">list2 = copy.copy(list1)</span><br><span class="line">print(list2)</span><br><span class="line">#[[1, 2], &#123;&apos;a&apos;: 10&#125;, 100]</span><br></pre></td></tr></table></figure></p>
+<p>copy.deepcopy(对象)：深拷贝<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a1 = [1, 2]</span><br><span class="line">a2 = &#123;&apos;a&apos;: 10&#125;</span><br><span class="line">list1 = [a1, a2]</span><br><span class="line">list2 = copy.deepcopy(list1)</span><br><span class="line">list2.append(1)</span><br><span class="line">print(list2)</span><br><span class="line">#[[1, 2], &#123;&apos;a&apos;: 10&#125;, 1]</span><br></pre></td></tr></table></figure></p>
+<p>#字典和列表的应用<br>列表的元素和字典的值可以是任何类型的数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"># 1.列表中有字典</span><br><span class="line">persons = [</span><br><span class="line">    &#123;&apos;name&apos;: &apos;张三&apos;, &apos;age&apos;: 30, &apos;sex&apos;: &apos;男&apos;&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;李四&apos;, &apos;age&apos;: 58, &apos;sex&apos;: &apos;女&apos;&#125;,</span><br><span class="line">    &#123;&apos;name&apos;: &apos;王五&apos;, &apos;age&apos;: 40, &apos;sex&apos;: &apos;男&apos;&#125;</span><br><span class="line">]</span><br><span class="line">person = persons[1]</span><br><span class="line">print(person) #&#123;&apos;name&apos;: &apos;李四&apos;, &apos;age&apos;: 58, &apos;sex&apos;: &apos;女&apos;&#125;</span><br><span class="line">name = person[&apos;name&apos;]</span><br><span class="line">print(name) #李四</span><br><span class="line"># 找出persons中最大的年龄对应的名字</span><br><span class="line">max1 = 0   # 当前最大的年龄</span><br><span class="line">name = &apos;&apos;  # 当前最大年龄对应的名字</span><br><span class="line">for item in persons:</span><br><span class="line">    age = item[&apos;age&apos;]</span><br><span class="line">    if age &gt; max1:</span><br><span class="line">        max1 = age</span><br><span class="line">        name = item[&apos;name&apos;]</span><br><span class="line"></span><br><span class="line">print(max1, name) #58 李四</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 2.字典中有列表</span><br><span class="line"># 写一个程序，保存一个班级的信息，包含班级名，位置，所有学生(学生中需要保存名字，年龄和学校)</span><br><span class="line">my_class = &#123;</span><br><span class="line">    &apos;class_name&apos;: &apos;python1807&apos;,</span><br><span class="line">    &apos;location&apos;: &apos;18-6&apos;,</span><br><span class="line">    &apos;all_students&apos;: [</span><br><span class="line">        &#123;&apos;name&apos;: &apos;小花&apos;, &apos;age&apos;: 18, &apos;school&apos;: &apos;清华&apos;&#125;,</span><br><span class="line">        &#123;&apos;name&apos;: &apos;小红&apos;, &apos;age&apos;: 19, &apos;school&apos;: &apos;北大&apos;&#125;,</span><br><span class="line">        &#123;&apos;name&apos;: &apos;小明&apos;, &apos;age&apos;: 20, &apos;school&apos;: &apos;川大&apos;&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line">print(my_class[&apos;all_students&apos;][0][&apos;school&apos;])</span><br><span class="line"></span><br><span class="line"># 练习：在班级中添加一个学生，姓名：老王， 年龄: 40, 学校：北大青鸟</span><br><span class="line"># name = input(&apos;请输入名字:&apos;)</span><br><span class="line"># age = int(input(&apos;请输入年龄:&apos;))</span><br><span class="line"># school = input(&apos;请输入学校:&apos;)</span><br><span class="line"># # 根据输入的信息创建对应的学生</span><br><span class="line"># student = &#123;&apos;name&apos;: name, &apos;age&apos;: age, &apos;school&apos;: school&#125;</span><br><span class="line"># # 将学生添加到班级的所有学生中</span><br><span class="line"># my_class[&apos;all_students&apos;].append(student)</span><br><span class="line"># print(my_class)</span><br><span class="line"></span><br><span class="line"># 练习2：删除班级中年龄小于20岁的学生~</span><br><span class="line"># 取出所有学生</span><br><span class="line">all_student = my_class[&apos;all_students&apos;]</span><br><span class="line"># for student in all_student[:]:</span><br><span class="line">#     if student[&apos;age&apos;] &lt; 20:</span><br><span class="line">#         all_student.remove(student)</span><br><span class="line"># print(my_class)</span><br><span class="line"></span><br><span class="line">index = 0</span><br><span class="line">while index &lt; len(all_student):</span><br><span class="line">    student = all_student[index]</span><br><span class="line">    if student[&apos;age&apos;] &lt; 20:</span><br><span class="line">        del all_student[index]</span><br><span class="line">        continue</span><br><span class="line">    index += 1</span><br><span class="line">print(my_class)</span><br><span class="line"></span><br><span class="line">清华</span><br><span class="line">&#123;&apos;class_name&apos;: &apos;python1807&apos;, &apos;location&apos;: &apos;18-6&apos;, &apos;all_students&apos;: [&#123;&apos;name&apos;: &apos;小明&apos;, &apos;age&apos;: 20, &apos;school&apos;: &apos;川大&apos;&#125;]&#125;</span><br></pre></td></tr></table></figure></p>
 
 					
 				</div>
@@ -198,14 +199,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/11/20/day6-列表/" title="列表">
+   		<a class="pull-left" href="/2018/11/20/怎么创多线程/" title="怎么创多线程">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/11/20/python内存管理机制/" title="python内存管理机制">
+		<a class="pull-right" href="/2018/11/20/时间模块/" title="时间模块">
 			下一篇 &raquo;
 		</a>
 		</li>

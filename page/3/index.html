@@ -160,31 +160,53 @@
 
 				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
 					<span class="theme-annie-post-date">
-						<a href="/2018/11/19/day3字符串/" itemprop="url">
-	<time datetime="2018-11-19T12:59:53.230Z" itemprop="datePublished">
-  		2018-11-19
+						<a href="/2018/11/20/字符串的内建函数/" itemprop="url">
+	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
+  		2018-11-20
   </time>
 </a>    
 
 					</span>
 					<span class="theme-annie-post-title">
 						
+	
+		<a href="/2018/11/20/字符串的内建函数/" itemprop="url">		
+			字符串内建函数		
+		</a>
+	
+
 					</span>
 					
 					
 						<p>
 							
-								(补充)：字符前面加r/R来阻止转义
-#字符串python中可以把字符串看成是一个序列(容器)，容器中内容只能是字符，每一个字符可以称为字符串中的元素。字符串是一个不可变的序列，有序的(不可变指的是字符串中的每个字符，以及每个字符的位置不可变)
-#获取字符串中的单个字符每一个字符串中的字符都会对应一个下标，下标是根据字符在字符串中的位置，从前往后依次增加的(第一个是0)
-####获取单个字符(下标	
+								##Python字符串运算符下表实例变量a值为字符串“Hello”，b变量值为“Python”：
+
+
+
+操作符
+描述
+实例
+
+
+
+
+
+
+
+
+
+| 字符串连接 | a + b输出结果： HelloPython
+
+
+| 重复输出字符串 | a * 2输出结果：HelloHello[] | 通过索引获取字符串中字符 | a[1]输出结果e[:] | 截取字符串中的一部分 | a[1:4]输出结果elli	
 							  
 						</p> 
 					
 
 					
 						<span class="continue-read">      	
-							<a href="/2018/11/19/day3字符串/" class="pull-right">
+							<a href="/2018/11/20/字符串的内建函数/" class="pull-right">
 								展开全文
 							</a>		
 						</span>
@@ -201,30 +223,35 @@
 
 				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
 					<span class="theme-annie-post-date">
-						<a href="/2018/11/19/day2进制和字符串/" itemprop="url">
-	<time datetime="2018-11-19T12:59:14.807Z" itemprop="datePublished">
-  		2018-11-19
+						<a href="/2018/11/20/怎么创多线程/" itemprop="url">
+	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
+  		2018-11-20
   </time>
 </a>    
 
 					</span>
 					<span class="theme-annie-post-title">
 						
+	
+		<a href="/2018/11/20/怎么创多线程/" itemprop="url">		
+			怎么创多线程		
+		</a>
+	
+
 					</span>
 					
 					
 						<p>
 							
-								#进制和字符串
-#进制计算机在储存数据的时候都是以二进制的形式去存的a.十进制基数：0～9进位：逢10进112每一位的值：123 = 1*100 + 2*10 + 3*1 = 1*10^2 + 2*10^1 + 3*10^0111 = 1*10^0+1*10^1+1*10^2=111
-b.十六进制:基数：0~9,a~f(A~F)–&gt;a(10),b(11),c(12),d(13),e(14),	
+								创建线程方式1：直接通过Thread类创建对象，将需要在子线程中执行的函数作为target参数传进去
+创建线程方式2：a.写一个自己的类去继承Thread类b.重写当前类的run方法，run中的任务就是在子线程中执行的任务c.创建当前类的对象, 就是线程对象。然后调用start去执行线程中任务1234567891011121314151617181920212223242526272829from	
 							  
 						</p> 
 					
 
 					
 						<span class="continue-read">      	
-							<a href="/2018/11/19/day2进制和字符串/" class="pull-right">
+							<a href="/2018/11/20/怎么创多线程/" class="pull-right">
 								展开全文
 							</a>		
 						</span>
@@ -241,29 +268,34 @@ b.十六进制:基数：0~9,a~f(A~F)–&gt;a(10),b(11),c(12),d(13),e(14),
 
 				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
 					<span class="theme-annie-post-date">
-						<a href="/2018/11/19/day2/" itemprop="url">
-	<time datetime="2018-11-19T12:58:56.895Z" itemprop="datePublished">
-  		2018-11-19
+						<a href="/2018/11/20/拷贝和应用/" itemprop="url">
+	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
+  		2018-11-20
   </time>
 </a>    
 
 					</span>
 					<span class="theme-annie-post-title">
 						
+	
+		<a href="/2018/11/20/拷贝和应用/" itemprop="url">		
+			拷贝和应用		
+		</a>
+	
+
 					</span>
 					
 					
 						<p>
 							
-								#day1作业1.写代码获取数字1234中的十位上和百位上的数字123456number = 1234print(number//10%10)# 3number = 1234print(number//100%10)# 2
-2.如果变量n的值是6784, 以下表达式的结果是多少？n / 1000 % 100    # 6.784n % 1000 / 100   # 7.84n // 100 % 1	
+								#拷贝将变量中的值赋值一份，产生新的数据。然后将新的数据对应的地址返回列表拷贝可以： [:]    copy()  属于浅拷贝浅拷贝：直接拷贝地址深拷贝：将地址对应值拷贝，产生新的地址import copy （导入拷贝模块）copy.copy(对象)：浅拷贝123456a1 = [1, 2]a2 = &#123;&apos;a&apos;: 10&#125;list1 = [a1, a2]list	
 							  
 						</p> 
 					
 
 					
 						<span class="continue-read">      	
-							<a href="/2018/11/19/day2/" class="pull-right">
+							<a href="/2018/11/20/拷贝和应用/" class="pull-right">
 								展开全文
 							</a>		
 						</span>
@@ -280,29 +312,34 @@ b.十六进制:基数：0~9,a~f(A~F)–&gt;a(10),b(11),c(12),d(13),e(14),
 
 				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
 					<span class="theme-annie-post-date">
-						<a href="/2018/11/19/day1/" itemprop="url">
-	<time datetime="2018-11-19T12:58:20.433Z" itemprop="datePublished">
-  		2018-11-19
+						<a href="/2018/11/20/时间模块/" itemprop="url">
+	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
+  		2018-11-20
   </time>
 </a>    
 
 					</span>
 					<span class="theme-annie-post-title">
 						
+	
+		<a href="/2018/11/20/时间模块/" itemprop="url">		
+			时间模块		
+		</a>
+	
+
 					</span>
 					
 					
 						<p>
 							
-								#day-1认识python
-###常用的快捷键(不只python中有效)control+/      注释control+s      保存control+b      编译control+r       执行(编译+执行)control+c       复制/拷贝control+v       粘贴control+x       剪切control+z      撤销control+y    	
+								12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210	
 							  
 						</p> 
 					
 
 					
 						<span class="continue-read">      	
-							<a href="/2018/11/19/day1/" class="pull-right">
+							<a href="/2018/11/20/时间模块/" class="pull-right">
 								展开全文
 							</a>		
 						</span>
@@ -319,29 +356,36 @@ b.十六进制:基数：0~9,a~f(A~F)–&gt;a(10),b(11),c(12),d(13),e(14),
 
 				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
 					<span class="theme-annie-post-date">
-						<a href="/2018/11/19/05-运算符/" itemprop="url">
-	<time datetime="2018-11-19T11:31:39.346Z" itemprop="datePublished">
-  		2018-11-19
+						<a href="/2018/11/20/服务器和客户端/" itemprop="url">
+	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
+  		2018-11-20
   </time>
 </a>    
 
 					</span>
 					<span class="theme-annie-post-title">
 						
+	
+		<a href="/2018/11/20/服务器和客户端/" itemprop="url">		
+			服务器和客户端		
+		</a>
+	
+
 					</span>
 					
 					
 						<p>
 							
-								python中运算符：数学运算符、比较运算符、逻辑运算符、赋值运算符、位运算1.数学运算符: +, - , * , /, %, //, **a. +:求和，和数学中的+号功能一样print(100 + 10)print(-100 + 10)print(12.5 + 3.14)
-b. -:求差，和数学中的-号功能一样result = 99 - 23   # 将99-23的结果赋给变量resultpr	
+								##socket服务器socket又叫套接字，实现网络通信的两端就是套接字。分为服务器对应的套接字和客户端对应的套接字python通过提供socket标准库来支持socket编程。socket编程就是用程序实现服务器和客户端
+######导入模块import socket
+######写一个客户端1234567891011121314151617181920212223import socket#	
 							  
 						</p> 
 					
 
 					
 						<span class="continue-read">      	
-							<a href="/2018/11/19/05-运算符/" class="pull-right">
+							<a href="/2018/11/20/服务器和客户端/" class="pull-right">
 								展开全文
 							</a>		
 						</span>
@@ -358,28 +402,35 @@ b. -:求差，和数学中的-号功能一样result = 99 - 23   # 将99-23的结
 
 				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
 					<span class="theme-annie-post-date">
-						<a href="/2018/11/19/04-变量/" itemprop="url">
-	<time datetime="2018-11-19T11:31:08.553Z" itemprop="datePublished">
-  		2018-11-19
+						<a href="/2018/11/20/正则表达式/" itemprop="url">
+	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
+  		2018-11-20
   </time>
 </a>    
 
 					</span>
 					<span class="theme-annie-post-title">
 						
+	
+		<a href="/2018/11/20/正则表达式/" itemprop="url">		
+			正则表达式		
+		</a>
+	
+
 					</span>
 					
 					
 						<p>
 							
-								1.什么是变量声明变量，就是在内存中开辟空间存储数据。变量就是程序在内存中存储数据的容器2.怎么声明变量C/Java声明变量: 类型 变量名 = 初值;Python声明变量: 变量名 = 初值“””变量名 = 初值说明：a.变量名：程序员自己命名，要求是标识符，并且不能是关键字；         所有的字母必须是小写的，如果变量名是由多个单词组成，多个单词之间用下划线隔开；         见名知	
+								正则表达式是用匹配或者描述字符串的工具。用处：a.判断字符串是否满足某个条件—判断输入的字符串是否是邮箱/手机号码。是否是ip地址b.提取满足条件的字符串c.字符串替换python中通过re模块中相应的方法来支持正则表达式的匹配、查找和替换等功能(from re import fullmatch或者是import re)
+fullmatch(正则表达式字符串, 字符串)  —&gt; 判断正则表达	
 							  
 						</p> 
 					
 
 					
 						<span class="continue-read">      	
-							<a href="/2018/11/19/04-变量/" class="pull-right">
+							<a href="/2018/11/20/正则表达式/" class="pull-right">
 								展开全文
 							</a>		
 						</span>
@@ -396,29 +447,35 @@ b. -:求差，和数学中的-号功能一样result = 99 - 23   # 将99-23的结
 
 				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
 					<span class="theme-annie-post-date">
-						<a href="/2018/11/19/03-数字类型/" itemprop="url">
-	<time datetime="2018-11-19T11:30:23.156Z" itemprop="datePublished">
-  		2018-11-19
+						<a href="/2018/11/20/练习题1/" itemprop="url">
+	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
+  		2018-11-20
   </time>
 </a>    
 
 					</span>
 					<span class="theme-annie-post-title">
 						
+	
+		<a href="/2018/11/20/练习题1/" itemprop="url">		
+			变量练习题		
+		</a>
+	
+
 					</span>
 					
 					
 						<p>
 							
-								不同的类型，在内存中存储时候所占的内存不一样1.python中的数字类型有四个：整型(int)、浮点型(float)、布尔(bool)、复数(complex)a.整型(int)：包含python所有的整数，python3.x整型只有int类型这一种，但是python2.x除了int还有long100123-78+782
-b.浮点型(float):包含python所有的小数注意：浮点型支持科学计数法	
+								练习题1.写代码获取数字1234中的十位上和百位上的数字123456number = 1234print(number//10%10)# 3number = 1234print(number//100%10)# 2
+2.如果变量n的值是6784, 以下表达式的结果是多少？n / 1000 % 100    # 6.784n % 1000 / 100   # 7.84n // 100 % 10   	
 							  
 						</p> 
 					
 
 					
 						<span class="continue-read">      	
-							<a href="/2018/11/19/03-数字类型/" class="pull-right">
+							<a href="/2018/11/20/练习题1/" class="pull-right">
 								展开全文
 							</a>		
 						</span>
@@ -435,67 +492,38 @@ b.浮点型(float):包含python所有的小数注意：浮点型支持科学计�
 
 				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
 					<span class="theme-annie-post-date">
-						<a href="/2018/11/19/02-python基本语法/" itemprop="url">
-	<time datetime="2018-11-19T11:29:54.022Z" itemprop="datePublished">
-  		2018-11-19
+						<a href="/2018/11/20/面向对象/" itemprop="url">
+	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
+  		2018-11-20
   </time>
 </a>    
 
 					</span>
 					<span class="theme-annie-post-title">
 						
+	
+		<a href="/2018/11/20/面向对象/" itemprop="url">		
+			面向对象		
+		</a>
+	
+
 					</span>
 					
 					
 						<p>
 							
-								1.注释写在代码中不参与编译执行的部分就是注释。作用是用来对代码进行注释说明，方便程序更好的阅读代码注意：要勤写注释，方便自己也方便别人！a.单行注释：在文本内容的前面前b.多好注释每一行前都加一个#号我是注释1我是注释2将注释放在三个单引号/三个双引号中(推荐使用双引号)“””我是多行注释1我是多行注释2“””‘’’我是多行注释1我是多行注释2‘’’
-2.标识符标识符是用来命名的(比如变量名、函	
+								###类的继承python中的类支持继承，并且支持多继承
+#####1.什么是继承父类(超类):被继承的类子类:继承的类继承就是让子类直接拥有父类的属性和方法(注意:继承后父类的东西不会减少)python中所有的类都是直接或者间接继承自object
+#####2.怎么继承class 类名(父类)：…
+class 类名 == class 类名(object)
+3.能继承那些东西对象属性、对象方法、类	
 							  
 						</p> 
 					
 
 					
 						<span class="continue-read">      	
-							<a href="/2018/11/19/02-python基本语法/" class="pull-right">
-								展开全文
-							</a>		
-						</span>
-					         		
-				</div>
-		
-			</article>
-		
-			<article class="am-g blog-entry-article">
-
-				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
-					<img src="/img/cart_cover.jpg" class="am-u-sm-12">
-				</div>	
-
-				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
-					<span class="theme-annie-post-date">
-						<a href="/2018/11/19/01-认识python/" itemprop="url">
-	<time datetime="2018-11-19T11:29:26.247Z" itemprop="datePublished">
-  		2018-11-19
-  </time>
-</a>    
-
-					</span>
-					<span class="theme-annie-post-title">
-						
-					</span>
-					
-					
-						<p>
-							
-								1.常用快捷键(不是只python中有效)：control+/     添加注释/取消注释control+s        保存control+b      编译control+r     执行(编译+执行)control+c     复制/拷贝control+v     粘贴control+x     剪切control+z     撤销control+shift+z    反撤销control	
-							  
-						</p> 
-					
-
-					
-						<span class="continue-read">      	
-							<a href="/2018/11/19/01-认识python/" class="pull-right">
+							<a href="/2018/11/20/面向对象/" class="pull-right">
 								展开全文
 							</a>		
 						</span>

@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>微信呼死你</title>
+	<title>MySQL基础</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《微信呼死你》</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《MySQL基础》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/11/20/itchat库 微信呼死你/" itemprop="url">		
-			微信呼死你		
+		<a href="/2018/11/20/MySQL/" itemprop="url">		
+			MySQL基础		
 		</a>
 	
 
@@ -170,7 +170,7 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/20/itchat库 微信呼死你/" itemprop="url">
+						<a href="/2018/11/20/MySQL/" itemprop="url">
 	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
   		2018-11-20
   </time>
@@ -187,8 +187,25 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>#微信呼死你</p>
-<p>###微信的一个库 可以拿到微信的所有好友信息，利用UserName的信息给指定的用户发信息，在利用时间模块可以在指定的间隔时间给用户发送信息,运行的时候需要用微信扫码下二维码登录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import itchat</span><br><span class="line"></span><br><span class="line"># 登录微信</span><br><span class="line">itchat.auto_login(hotReload=True)</span><br><span class="line"># 获取好友信息</span><br><span class="line">friends = itchat.get_friends()</span><br><span class="line">print(list)</span><br><span class="line">for items in friends:</span><br><span class="line">    firend = dict(items)</span><br><span class="line">    print(firend)</span><br><span class="line">    # 群发</span><br><span class="line">    # itchat.send(&apos;哈喽，我在用python给你发信息呢&apos;,firend[UserName])</span><br><span class="line">import time</span><br><span class="line">while True:</span><br><span class="line">    # time.sleep(1)</span><br><span class="line">    # itchat.send(&apos;哈喽，我在用python给你发信息呢～要不要试一下轰炸呼死你&apos;,friends[1][&apos;UserName&apos;])</span><br><span class="line">    print(friends[&apos;UserName&apos;])</span><br><span class="line">    # itchat.send(&apos;哈哈哈哈成功！&apos;, &quot;@c1902561fdea246959d52f8d128553b625675c857d69da2242229fa611399f0e&quot;)</span><br><span class="line">    itchat.send(&apos;轰炸信息来啦！&apos;, &quot;&quot;)</span><br></pre></td></tr></table></figure></p>
+						<p>数据库<br>Navicat for MySQL –&gt; 猫<br>SQLyog –&gt; 海豚<br>Toad for MySQL –&gt; 蛤蟆<br>什么叫数据库 –&gt; 数据的仓库 - database<br>关系型数据库 –&gt; 数据持久化 - 管理数据 - 方便的检索数据<br>理论基础：集合论、关系代数<br>表象：用二维表储存数据</p>
+<ul>
+<li>行 - row 记录</li>
+<li>列 - column - 字段 - 数据类型</li>
+<li>主键列 - primary key - 唯一标识一条记录<br>有自己的编程语言：结构化查询语言 - SQL</li>
+</ul>
+<p>DB - database<br>DBMS -database management system<br>DBA - database administrator<br>DBS - database system = DB + DBMS + DBA</p>
+<p>关系型数据库的产品(关系型数据库管理系统)</p>
+<ol>
+<li>Oracle</li>
+<li>MySQL –&gt; 服务器+客户端工具<br>C/S应用模式 - Client(客户端) / Server(服务器)</li>
+</ol>
+<hr>
+<p>非关系型数据库产品:<br>IBM - DB2<br>微软 - SQL Server<br>PostgreSQL </p>
+<hr>
+<p>Redis - 健值对数据库<br>MongoDB- 文档数据库<br>ElasticSearch/Solr - 搜索引擎<br>– 关系型数据库<br>– 关系代数 + 集合论<br>– 用二维表组织数据(行和列)<br>– 结构化查询语言(SQL)<br>– SQL: Structured Query Language - 结构化查询语言 - 不区分大小写<br>– 1. DDL: Data Definition Language - 数据定义语言 - create / drop / alter – 2. DML: Data Manipulation Language - 数据操作语言 - insert / delete / update / select<br>– 3. DCL: Data Control Language - 数据控制语言 - grant / revoke / commit / rollback<br>– 如果存在名为school的数据库就删除 drop database if exists school;<br>– 创建school数据库并设置默认字符集为utf8 create database school default charset utf8;<br>– 切换到school数据库的上下文环境 use school;<br>– 如果存在名为tb_student的表就删除 drop table if exists tb_student;<br>– 查看MySQL支持哪些数据类型 – ? data types<br>– ? int<br>– ? varchar<br>– 创建学生表tb_student<br>create table tb_student<br>(<br>stuid int not null comment ‘学号’,<br>stuname varchar(31) not null comment ‘姓名’, stusex enum(‘男’, ‘女’) default ‘男’ comment ‘性别’, stubirth date comment ‘出生日期’,<br>stuaddr varchar(255) comment ‘家庭住址’, primary key (stuid)<br>);<br>– 修改tb_student表的表结构添加一个新列<br>alter table tb_student add column stutel char(11) comment ‘联系电话’;<br>– 修改tb_student表的表结构删除一个列 alter table tb_student drop column stutel;<br>– 修改tb_student表的表结构修改一个列<br>alter table tb_student change column stuname stuname varchar(20) not null comment ‘姓名’;<br>– 如果存在名为tb_course的表就删除 drop table if exists tb_course;<br>– 创建课程表tb_course<br>create table tb_course<br>(<br>cid int not null comment ‘课程编号’,<br>cname varchar(31) not null comment ‘课程名称’, credit tinyint unsigned not null comment ‘学分’, cdate timestamp default now() comment ‘开课日期’, primary key (cid)<br>);<br>– 录入完整的学生数据<br>insert into tb_student values<br>(1001, ‘骆昊’, ‘男’, ‘1980-11-28’, ‘四川成都’);<br>– 指定列录入对应的数据<br>insert into tb_student (stuid, stuname, stubirth) values (1002, ‘王大锤’, ‘1990-2-2’);<br>– 一次性插入多条数据 insert into tb_student<br>(stuid, stuname, stusex) values<br>(1003, ‘白元芳’, default), (1004, ‘白洁’, ‘女’), (1005, ‘狄仁杰’, ‘男’), (1006, ‘武则天’, ‘女’);</p>
+<p>– 录入课程数据 insert into tb_course<br>(cid, cname, credit) values<br>(1111, ‘Python程序设计’, 3), (2222, ‘Web前端开发’, 2), (3333, ‘Linux系统入门’, 2), (4444, ‘数据库理论和实践’, 3), (5555, ‘企业应用架构’, 2);<br>– 删除记录<br>delete from tb_student where stuid=3001;<br>delete from tb_student where stuid&gt;1005;<br>delete from tb_student where stuid between 1003 and 1005;<br>– 删全表<br>truncate table tb_student;<br>– 更新记录<br>update tb_student set stubirth=’1995-5-5’ where stuname=’白元芳’; update tb_student set stubirth=’1996-6-6’, stuaddr=’河北保定’ where stuid=1004;<br>update tb_course set credit=4 where cid in (2222, 5555); update tb_course set credit=2 where cid=2222 or cid=5555;<br>– 查询记录<br>select <em> from tb_student; select </em> from tb_course;<br>– 投影<br>select stuid, stuname, stusex from tb_student;<br>– 别名<br>select stuid as 学号, stuname as 姓名, stusex as 性别 from tb_student;<br>– 筛选<br>select stuid, stuname, stusex from tb_student where stusex=’男’; select stuname, stubirth from tb_student<br>where stubirth between ‘1990-1-1’ and ‘1999-12-31’;</p>
+<p>select stuname, stubirth, stusex from tb_student<br>where stubirth between ‘1990-1-1’ and ‘1999-12-31’ and stusex=’男’; select stuname, stubirth, stusex from tb_student<br>where stubirth between ‘1990-1-1’ and ‘1999-12-31’ or stusex=’男’;<br>– 集合运算in和not in<br>select stuid, stuname from tb_student where stuid not in (1001, 1003, 1005, 2001);<br>– 判断空值(null)不能用=或&lt;&gt;，需要使用is或is not select <em> from tb_student where stuaddr is null; select </em> from tb_student where stuaddr is not null;<br>insert into tb_student values (1007, ‘李白’, default, null, null); insert into tb_student values (1008, ‘李白菜’, ‘女’, null, null);<br> – 模糊 select <em> select </em> select <em> select </em> select <em> select </em> select <em> select </em><br>– 排序 select <em> select </em> select <em><br>from tb_student where stuname like ‘白%’; from tb_student where stuname like ‘%白’; from tb_student where stuname like ‘%白%’; from tb_student where stuname like ‘白_’; from tb_student where stuname like ‘白<strong>‘; from tb_student where stuname like ‘_白’; from tb_student where stuname like ‘</strong>白’; from tb_student where stuname like ‘_白_’;<br>from tb_student order by stuid desc;<br>from tb_student order by stuname asc;<br>from tb_student order by stusex desc, stuid desc;<br>– 分页查询<br>select </em> from tb_student order by stuid desc limit 3;<br>select <em> from tb_student order by stuid desc limit 3 offset 3; select </em> from tb_student order by stuid desc limit 3,3; select <em> from tb_student order by stuid desc limit 3 offset 6; select </em> from tb_student order by stuid desc limit 6,3;<br>select distinct substr(stuname, 1, 1) from tb_student;<br>select substr(stuname, 2, length(stuname)) from tb_student;</p>
+<p>– 聚合函数(统计函数)<br>select max(credit) from tb_course; select min(credit) from tb_course;<br>select max(stubirth) from tb_student; select min(stubirth) from tb_student;<br>select sum(credit) from tb_course; select avg(credit) from tb_course;<br>select count(stuid) from tb_student; select count(cid) from tb_course;<br>– 分组查询<br>select stusex, count(stuid) from tb_student group by stusex;<br>– 创建用户<br>create user ‘wangdachui‘@’%’ identified by ‘1qaz2wsx’; create user ‘wangdachui‘@’localhost’ identified by ‘1qaz2wsx’;<br>– 授权操作<br>grant all privileges on <em>.</em> to ‘wangdachui‘@’localhost’;<br>grant all privileges on <em>.</em> to ‘wangdachui‘@’localhost’ with grant option; – 召回权限<br>revoke all privileges on <em>.</em> from ‘wangdachui‘@’localhost’;<br>grant select on school.<em> to ‘wangdachui‘@’localhost’;<br>grant insert, delete, update on school.</em> to ‘wangdachui‘@’localhost’; grant create, drop, alter on school.* to ‘wangdachui‘@’localhost’;</p>
 
 					
 				</div>
@@ -198,14 +215,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/11/20/day6-列表/" title="列表">
+   		<a class="pull-left" href="/2018/11/20/05-运算符/" title="运算符">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/11/20/python内存管理机制/" title="python内存管理机制">
+		<a class="pull-right" href="/2018/11/20/非函数版学生管理系统/" title="学生管理系统">
 			下一篇 &raquo;
 		</a>
 		</li>

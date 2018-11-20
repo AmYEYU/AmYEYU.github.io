@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>微信呼死你</title>
+	<title>数字类型</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《微信呼死你》</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《数字类型》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/11/20/itchat库 微信呼死你/" itemprop="url">		
-			微信呼死你		
+		<a href="/2018/11/20/03-数字类型/" itemprop="url">		
+			数字类型		
 		</a>
 	
 
@@ -170,7 +170,7 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/20/itchat库 微信呼死你/" itemprop="url">
+						<a href="/2018/11/20/03-数字类型/" itemprop="url">
 	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
   		2018-11-20
   </time>
@@ -187,9 +187,13 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>#微信呼死你</p>
-<p>###微信的一个库 可以拿到微信的所有好友信息，利用UserName的信息给指定的用户发信息，在利用时间模块可以在指定的间隔时间给用户发送信息,运行的时候需要用微信扫码下二维码登录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import itchat</span><br><span class="line"></span><br><span class="line"># 登录微信</span><br><span class="line">itchat.auto_login(hotReload=True)</span><br><span class="line"># 获取好友信息</span><br><span class="line">friends = itchat.get_friends()</span><br><span class="line">print(list)</span><br><span class="line">for items in friends:</span><br><span class="line">    firend = dict(items)</span><br><span class="line">    print(firend)</span><br><span class="line">    # 群发</span><br><span class="line">    # itchat.send(&apos;哈喽，我在用python给你发信息呢&apos;,firend[UserName])</span><br><span class="line">import time</span><br><span class="line">while True:</span><br><span class="line">    # time.sleep(1)</span><br><span class="line">    # itchat.send(&apos;哈喽，我在用python给你发信息呢～要不要试一下轰炸呼死你&apos;,friends[1][&apos;UserName&apos;])</span><br><span class="line">    print(friends[&apos;UserName&apos;])</span><br><span class="line">    # itchat.send(&apos;哈哈哈哈成功！&apos;, &quot;@c1902561fdea246959d52f8d128553b625675c857d69da2242229fa611399f0e&quot;)</span><br><span class="line">    itchat.send(&apos;轰炸信息来啦！&apos;, &quot;&quot;)</span><br></pre></td></tr></table></figure></p>
-
+						<h1 id="不同的类型，在内存中存储时候所占的内存不一样"><a href="#不同的类型，在内存中存储时候所占的内存不一样" class="headerlink" title="不同的类型，在内存中存储时候所占的内存不一样"></a>不同的类型，在内存中存储时候所占的内存不一样</h1><h1 id="1-python中的数字类型有四个：整型-int-、浮点型-float-、布尔-bool-、复数-complex"><a href="#1-python中的数字类型有四个：整型-int-、浮点型-float-、布尔-bool-、复数-complex" class="headerlink" title="1.python中的数字类型有四个：整型(int)、浮点型(float)、布尔(bool)、复数(complex)"></a>1.python中的数字类型有四个：整型(int)、浮点型(float)、布尔(bool)、复数(complex)</h1><h1 id="a-整型-int-：包含python所有的整数，python3-x整型只有int类型这一种，"><a href="#a-整型-int-：包含python所有的整数，python3-x整型只有int类型这一种，" class="headerlink" title="a.整型(int)：包含python所有的整数，python3.x整型只有int类型这一种，"></a>a.整型(int)：包含python所有的整数，python3.x整型只有int类型这一种，</h1><h1 id="但是python2-x除了int还有long"><a href="#但是python2-x除了int还有long" class="headerlink" title="但是python2.x除了int还有long"></a>但是python2.x除了int还有long</h1><p>100<br>123<br>-78<br>+782</p>
+<h1 id="b-浮点型-float-包含python所有的小数"><a href="#b-浮点型-float-包含python所有的小数" class="headerlink" title="b.浮点型(float):包含python所有的小数"></a>b.浮点型(float):包含python所有的小数</h1><h1 id="注意：浮点型支持科学计数法"><a href="#注意：浮点型支持科学计数法" class="headerlink" title="注意：浮点型支持科学计数法"></a>注意：浮点型支持科学计数法</h1><p>12.89<br>-123.9098<br>+237.890<br>print(12e2)      # 12<em>10^2    1200.0<br>print(12e-3)     # 12</em>10^(-3)    0.012 </p>
+<h1 id="c-布尔-bool-布尔类型的值只有两个，分别是True-真-和False-假"><a href="#c-布尔-bool-布尔类型的值只有两个，分别是True-真-和False-假" class="headerlink" title="c.布尔(bool): 布尔类型的值只有两个，分别是True(真)和False(假)"></a>c.布尔(bool): 布尔类型的值只有两个，分别是True(真)和False(假)</h1><h1 id="注意：布尔值的首字母是大写的"><a href="#注意：布尔值的首字母是大写的" class="headerlink" title="注意：布尔值的首字母是大写的"></a>注意：布尔值的首字母是大写的</h1><h1 id="True对应的数值其实是1，-False对应的数值是0"><a href="#True对应的数值其实是1，-False对应的数值是0" class="headerlink" title="True对应的数值其实是1， False对应的数值是0"></a>True对应的数值其实是1， False对应的数值是0</h1><p>True<br>False<br>print(False+1) </p>
+<h1 id="d-复数-complex"><a href="#d-复数-complex" class="headerlink" title="d.复数(complex)"></a>d.复数(complex)</h1><h1 id="复数：有实部和虚部组成的数字"><a href="#复数：有实部和虚部组成的数字" class="headerlink" title="复数：有实部和虚部组成的数字"></a>复数：有实部和虚部组成的数字</h1><p>10+10j</p>
+<h1 id="2-type-数值-变量-获取括号中值的类型"><a href="#2-type-数值-变量-获取括号中值的类型" class="headerlink" title="2.type(数值/变量): 获取括号中值的类型"></a>2.type(数值/变量): 获取括号中值的类型</h1><p>print(type(10j))<br>print(type(100))<br>print(type(True))<br>print(type(2e2))</p>
+<h1 id="3-类型名-将其他的类型的数据转换成当前类型"><a href="#3-类型名-将其他的类型的数据转换成当前类型" class="headerlink" title="3.类型名():将其他的类型的数据转换成当前类型"></a>3.类型名():将其他的类型的数据转换成当前类型</h1><p>print(int(12.5))<br>print(bool(10))<br>print(float(100))<br>print(complex(100))</p>
+<h1 id="print-float-100-10j-注意：复数不能转换成整型-浮点型"><a href="#print-float-100-10j-注意：复数不能转换成整型-浮点型" class="headerlink" title="print(float(100+10j))   # 注意：复数不能转换成整型/浮点型"></a>print(float(100+10j))   # 注意：复数不能转换成整型/浮点型</h1>
 					
 				</div>
 			</div>
@@ -198,14 +202,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/11/20/day6-列表/" title="列表">
+   		<a class="pull-left" href="/2018/11/20/socket编程/" title="socket编程">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/11/20/python内存管理机制/" title="python内存管理机制">
+		<a class="pull-right" href="/2018/11/20/05-运算符/" title="运算符">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -289,6 +293,18 @@
 	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
 -->
 
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#不同的类型，在内存中存储时候所占的内存不一样"><span class="post-toc-text">不同的类型，在内存中存储时候所占的内存不一样</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-python中的数字类型有四个：整型-int-、浮点型-float-、布尔-bool-、复数-complex"><span class="post-toc-text">1.python中的数字类型有四个：整型(int)、浮点型(float)、布尔(bool)、复数(complex)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#a-整型-int-：包含python所有的整数，python3-x整型只有int类型这一种，"><span class="post-toc-text">a.整型(int)：包含python所有的整数，python3.x整型只有int类型这一种，</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#但是python2-x除了int还有long"><span class="post-toc-text">但是python2.x除了int还有long</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#b-浮点型-float-包含python所有的小数"><span class="post-toc-text">b.浮点型(float):包含python所有的小数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注意：浮点型支持科学计数法"><span class="post-toc-text">注意：浮点型支持科学计数法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#c-布尔-bool-布尔类型的值只有两个，分别是True-真-和False-假"><span class="post-toc-text">c.布尔(bool): 布尔类型的值只有两个，分别是True(真)和False(假)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注意：布尔值的首字母是大写的"><span class="post-toc-text">注意：布尔值的首字母是大写的</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#True对应的数值其实是1，-False对应的数值是0"><span class="post-toc-text">True对应的数值其实是1， False对应的数值是0</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#d-复数-complex"><span class="post-toc-text">d.复数(complex)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#复数：有实部和虚部组成的数字"><span class="post-toc-text">复数：有实部和虚部组成的数字</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-type-数值-变量-获取括号中值的类型"><span class="post-toc-text">2.type(数值/变量): 获取括号中值的类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-类型名-将其他的类型的数据转换成当前类型"><span class="post-toc-text">3.类型名():将其他的类型的数据转换成当前类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#print-float-100-10j-注意：复数不能转换成整型-浮点型"><span class="post-toc-text">print(float(100+10j))   # 注意：复数不能转换成整型/浮点型</span></a></li></ol>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
 	
 
 	</div>

@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>微信呼死你</title>
+	<title>字符串内建函数</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《微信呼死你》</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《字符串内建函数》</p>
 			
 		
 	
@@ -160,8 +160,8 @@
 					
 					
 	
-		<a href="/2018/11/20/itchat库 微信呼死你/" itemprop="url">		
-			微信呼死你		
+		<a href="/2018/11/20/字符串的内建函数/" itemprop="url">		
+			字符串内建函数		
 		</a>
 	
 
@@ -170,7 +170,7 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/20/itchat库 微信呼死你/" itemprop="url">
+						<a href="/2018/11/20/字符串的内建函数/" itemprop="url">
 	<time datetime="2018-11-20T11:37:49.000Z" itemprop="datePublished">
   		2018-11-20
   </time>
@@ -187,8 +187,66 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>#微信呼死你</p>
-<p>###微信的一个库 可以拿到微信的所有好友信息，利用UserName的信息给指定的用户发信息，在利用时间模块可以在指定的间隔时间给用户发送信息,运行的时候需要用微信扫码下二维码登录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import itchat</span><br><span class="line"></span><br><span class="line"># 登录微信</span><br><span class="line">itchat.auto_login(hotReload=True)</span><br><span class="line"># 获取好友信息</span><br><span class="line">friends = itchat.get_friends()</span><br><span class="line">print(list)</span><br><span class="line">for items in friends:</span><br><span class="line">    firend = dict(items)</span><br><span class="line">    print(firend)</span><br><span class="line">    # 群发</span><br><span class="line">    # itchat.send(&apos;哈喽，我在用python给你发信息呢&apos;,firend[UserName])</span><br><span class="line">import time</span><br><span class="line">while True:</span><br><span class="line">    # time.sleep(1)</span><br><span class="line">    # itchat.send(&apos;哈喽，我在用python给你发信息呢～要不要试一下轰炸呼死你&apos;,friends[1][&apos;UserName&apos;])</span><br><span class="line">    print(friends[&apos;UserName&apos;])</span><br><span class="line">    # itchat.send(&apos;哈哈哈哈成功！&apos;, &quot;@c1902561fdea246959d52f8d128553b625675c857d69da2242229fa611399f0e&quot;)</span><br><span class="line">    itchat.send(&apos;轰炸信息来啦！&apos;, &quot;&quot;)</span><br></pre></td></tr></table></figure></p>
+						<p>##Python字符串运算符<br>下表实例变量a值为字符串<br>“Hello”，b变量值为<br>“Python”：</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>| 字符串连接 | a + b<br>输出结果： HelloPython</li>
+</ul>
+<ul>
+<li>| 重复输出字符串 | a * 2<br>输出结果：HelloHello<br>[] | 通过索引获取字符串中字符 | a[1]<br>输出结果<br>e<br>[:] | 截取字符串中的一部分 | a[1:4]<br>输出结果<br>ell<br>in | 成员运算符 - 如果字符串中包含给定的字符返回<br>True | ‘H’ in a<br>输出结果<br>1<br>not in | 成员运算符 - 如果字符串中不包含给定的字符返回<br>True | ‘M’ not in a<br>输出结果<br>1<br>r / R | 原始字符串 - 原始字符串：所有的字符串都是直接按照字面的意思来使用, 没有转义特殊或不能打印的字符。 原始字符串除在字符串的第一个引号前加上字母<br>r（可以大小写）以外，与普通字符串有着几乎完全相同的语法。 | print(r’\n’)<br>print(R’\n’)<br>% | 格式字符串 |</li>
+</ul>
+<p>a = ‘Hello’<br>b = ‘Python’</p>
+<p>print(a + ‘ ‘ + b)  # 打印：Hello Python</p>
+<p>str1 = a * 3<br>print(str1)  # 打印:HelloHelloHello</p>
+<p>re = ‘He’ in a<br>print(re)  # 打印：True</p>
+<p>re = ‘He’ not in a<br>print(re)  # 打印: False</p>
+<p>##Python字符串格式化<br>Python<br>支持格式化字符串的输出 。尽管这样可能会用到非常复杂的表达式，但最基本的用法是将一个值插入到一个有字符串格式符 % s<br>的字符串中。<br>在<br>Python<br>中，字符串格式化使用与<br>C<br>中<br>sprintf<br>函数一样的语法。</p>
+<p>print (“我叫 %s 今年 %d 岁!” % (‘小明’, 10))</p>
+<p>python字符串格式化符号:</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>% c | 格式化字符及其ASCII码<br>% s | 格式化字符串<br>% d | 格式化整数<br>% u | 格式化无符号整型<br>% o | 格式化无符号八进制数<br>% x | 格式化无符号十六进制数<br>% X | 格式化无符号十六进制数（大写）<br>% f | 格式化浮点数字，可指定小数点后的精度<br>% e | 用科学计数法格式化浮点数<br>% E | 作用同 % e，用科学计数法格式化浮点数<br>% g | % f和 % e的简写<br>% G | % f<br>和 % E<br>的简写<br>% p | 用十六进制数格式化变量的地址</p>
+<p>–</p>
+<p>##Python 的字符串内建函数<br>Python<br>的字符串常用内建函数如下：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>1 | capitalize() | 将字符串的第一个字符转换为大写<br>2 | center(width, fillchar) | 返回一个指定的宽度<br>width<br>居中的字符串，fillchar<br>为填充的字符，默认为空格。<br>3 | count(str, beg=0, end=len(string)) | 返回<br>str<br>在<br>string<br>里面出现的次数，如果<br>beg<br>或者<br>end<br>指定则返回指定范围内<br>str<br>出现的次数<br>4 | bytes.decode(encoding=”utf-8”, errors=”strict”) | Python3<br>中没有<br>decode<br>方法，但我们可以使用<br>bytes<br>对象的<br>decode()<br>方法来解码给定的<br>bytes<br>对象，这个<br>bytes<br>对象可以由<br>str.encode()<br>来编码返回。<br>5 | encode(encoding=’UTF-8’, errors=’strict’) | 以<br>encoding<br>指定的编码格式编码字符串，如果出错默认报一个ValueError<br>的异常，除非<br>errors<br>指定的是<br>‘ignore’<br>或者<br>‘replace’<br>6 | endswith(suffix, beg=0, end=len(string)) | 检查字符串是否以<br>obj<br>结束，如果beg<br>或者<br>end<br>指定则检查指定的范围内是否以<br>obj<br>结束，如果是，返回<br>True, 否则返回<br>False.<br>7 | expandtabs(tabsize=8) | 把字符串<br>string<br>中的<br>tab<br>符号转为空格，tab<br>符号默认的空格数是<br>8 。<br>8 | find(str, beg=0<br>end = len(string)) | 检测<br>str<br>是否包含在字符串中，如果指定范围<br>beg<br>和<br>end ，则检查是否包含在指定范围内，如果包含返回开始的索引值，否则返回 - 1<br>9 | index(str, beg=0, end=len(string)) | 跟find()<br>方法一样，只不过如果str不在字符串中会报一个异常.<br>10 | isalnum() | 如果字符串至少有一个字符并且所有字符都是字母或数字则返<br>回<br>True, 否则返回<br>False<br>11 | isalpha() | 如果字符串至少有一个字符并且所有字符都是字母则返回<br>True, 否则返回<br>False<br>12 | isdigit() | 如果字符串只包含数字则返回<br>True<br>否则返回<br>False..<br>13 | islower() | 如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)<br>字符都是小写，则返回<br>True，否则返回<br>False<br>14 | isnumeric() | 如果字符串中只包含数字字符，则返回<br>True，否则返回<br>False（中文数字也可以）<br>15 | isspace() | 如果字符串中只包含空白，则返回<br>True，否则返回<br>False.<br>16 | istitle() | 如果字符串是标题化的(见<br>title())则返回<br>True，否则返回<br>False<br>17 | isupper() | 如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)<br>字符都是大写，则返回<br>True，否则返回<br>False<br>18 | join(seq) | 以指定字符串作为分隔符，将<br>seq<br>中所有的元素(的字符串表示)<br>合并为一个新的字符串<br>19 | len(string) | 返回字符串长度<br>20 | ljust(width[, fillchar]) | 返回一个原字符串左对齐, 并使用<br>fillchar<br>填充至长度<br>width<br>的新字符串，fillchar<br>默认为空格。<br>21 | lower() | 转换字符串中所有大写字符为小写.<br>22 | lstrip() | 截掉字符串左边的空格或指定字符。<br>23 | maketrans() | 创建字符映射的转换表，对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。<br>24 | max(str) | 返回字符串<br>str<br>中最大的字母。<br>25 | min(str) | 返回字符串<br>str<br>中最小的字母。<br>26 | replace(old, new[, max]) | 把<br>将字符串中的<br>str1<br>替换成<br>str2, 如果<br>max<br>指定，则替换不超过<br>max<br>次。<br>27 | rfind(str, beg=0, end=len(string)) | 类似于<br>find()<br>函数，不过是从右边开始查找.<br>28 | rindex(str, beg=0, end=len(string)) | 类似于<br>index()，不过是从右边开始.<br>29 | rjust(width, [, fillchar]) | 返回一个原字符串右对齐, 并使用fillchar(默认空格）填充至长度<br>width<br>的新字符串<br>30 | rstrip() | 删除字符串字符串末尾的空格.<br>31 | split(str=””, num=string.count(str)) | num = string.count(str)) 以<br>str<br>为分隔符截取字符串，如果<br>num<br>有指定值，则仅截取<br>num<br>个子字符串<br>32 | splitlines([keepends]) | 按照行(‘\r’, ‘\r\n’, \n<br>‘)分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符。<br>33 | startswith(str, beg=0, end=len(string)) | 检查字符串是否是以<br>obj<br>开头，是则返回<br>True，否则返回<br>False。如果beg<br>和<br>end<br>指定值，则在指定范围内检查。<br>34 | strip([chars]) | 在字符串上执行<br>lstrip()<br>和<br>rstrip()<br>35 | swapcase() | 将字符串中大写转换为小写，小写转换为大写<br>36 | title() | 返回<br>“标题化”<br>的字符串, 就是说所有单词都是以大写开始，其余字母均为小写(见<br>istitle())<br>37 | translate(table, deletechars=””) | 根据<br>str<br>给出的表(包含<br>256<br>个字符)转换<br>string<br>的字符, 要过滤掉的字符放到<br>deletechars<br>参数中<br>38 | upper() | 转换字符串中的小写字母为大写<br>39 | zfill(width) | 返回长度为<br>width<br>的字符串，原字符串右对齐，前面填充0<br>40 | isdecimal() | 检查字符串是否只包含十进制字符，如果是返回<br>true，否则返回<br>false。</p>
 
 					
 				</div>
@@ -198,14 +256,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/11/20/day6-列表/" title="列表">
+   		<a class="pull-left" href="/2018/11/20/多线程/" title="多线程">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/11/20/python内存管理机制/" title="python内存管理机制">
+		<a class="pull-right" href="/2018/11/20/怎么创多线程/" title="怎么创多线程">
 			下一篇 &raquo;
 		</a>
 		</li>
