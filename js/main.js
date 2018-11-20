@@ -1,147 +1,259 @@
-/* 
- * 2018.8.26 modify by lcc
- * based on the js plugin http://www.htmleaf.com/jQuery/Menu-Navigation/20141212771.html
- * based on other unknown sources...
- * thanks for their open sources!
-*/
-jQuery(document).ready(function($) {
+(function($) {
 
-	"use strict";
+	skel.breakpoints({
+		xlarge:	'(max-width: 1680px)',
+		large:	'(max-width: 1280px)',
+		medium:	'(max-width: 980px)',
+		small:	'(max-width: 736px)',
+		xsmall:	'(max-width: 480px)',
+		xxsmall: '(max-width: 360px)'
+	});
 
-	/* Preloader */
-	var Annie_Preloader = function() {
-		$(window).on("load", function() {
-			// fade out the loading animation
-			$("#status").fadeOut();
+	/**
+	 * Applies parallax scrolling to an element's background image.
+	 * @return {jQuery} jQuery object.
+	 */
+	$.fn._parallax = function(intensity) {
 
-			//fade out the white DIV that covers the website
-			$("#preloader").delay(400).fadeOut("slow");
+		var	$window = $(window),
+			$this = $(this);
+
+		if (this.length == 0 || intensity === 0)
+			return $this;
+
+		if (this.length > 1) {
+
+			for (var i=0; i < this.length; i++)
+				$(this[i])._parallax(intensity);
+
+			return $this;
+
+		}
+
+		if (!intensity)
+			intensity = 0.25;
+
+		$this.each(function() {
+
+			var $t = $(this),
+				$bg = $('<div class="bg"></div>').appendTo($t),
+				on, off;
+
+			on = function() {
+
+				$bg
+					.removeClass('fixed')
+					.css('transform', 'none');
+
+				$window
+					.on('scroll._parallax', function() {
+
+						$bg.css('transform', 'none');
+
+					});
+			};
+
+			off = function() {
+
+				$bg
+					.addClass('fixed')
+					.css('transform', 'none');
+
+				$window
+					.off('scroll._parallax');
+
+			};
+
+			// Disable parallax on ..
+				if (skel.vars.browser == 'ie'		// IE
+				||	skel.vars.browser == 'edge'		// Edge
+				||	window.devicePixelRatio > 1		// Retina/HiDPI (= poor performance)
+				||	skel.vars.mobile)				// Mobile devices
+					off();
+
+			// Enable everywhere else.
+				else {
+
+					skel.on('!large -large', on);
+					skel.on('+large', off);
+
+				}
+
 		});
+
+		$window
+			.off('load._parallax resize._parallax')
+			.on('load._parallax resize._parallax', function() {
+				$window.trigger('scroll');
+			});
+
+		return $(this);
+
 	};
 
-	/* Nav */
-	var Annie_Nav = function() {
-		// browser window scroll (in pixels) after which the "menu" link is shown
-		var offset = 300;
-		var navigationContainer = $('#cd-nav');
-		var mainNavigation = navigationContainer.find('#cd-main-nav ul');
+	$(function() {
 
-		//hide or show the "menu" link
-		checkMenu();
+		var	$window = $(window),
+			$body = $('body'),
+			$wrapper = $('#wrapper'),
+			$header = $('#header'),
+			$nav = $('#nav'),
+			$main = $('#main'),
+			$navPanelToggle, $navPanel, $navPanelInner;
 
-		$(window).scroll(function() {
-			checkMenu();
-		});
+		// Disable animations/transitions until the page has loaded.
+			$window.on('load', function() {
+				window.setTimeout(function() {
+					$body.removeClass('is-loading');
+				}, 100);
+			});
 
-		//open or close the menu clicking on the bottom "menu" link
-		$('.cd-nav-trigger').on('click', function() {
-			$(this).toggleClass('menu-is-open');
+		// Prioritize "important" elements on medium.
+			skel.on('+medium -medium', function() {
+				$.prioritize(
+					'.important\\28 medium\\29',
+					skel.breakpoint('medium').active
+				);
+			});
 
-			//we need to remove the transitionEnd event handler (we add it when scolling up with the menu open)
-			mainNavigation.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend').toggleClass('is-visible');
-		});
+		// Scrolly.
+			$('.scrolly').scrolly();
 
-		function checkMenu() {
-			if($(window).scrollTop() > offset && !navigationContainer.hasClass('is-fixed')) {
-				navigationContainer.addClass('is-fixed').find('.cd-nav-trigger').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
-					mainNavigation.addClass('has-transitions');
-				});
-			} else if($(window).scrollTop() <= offset) {
+		// Background.
+			$wrapper._parallax(0.925);
 
-				//check if the menu is open when scrolling up
-				if(mainNavigation.hasClass('is-visible') && !$('html').hasClass('no-csstransitions')) {
-					//close the menu with animation
-					mainNavigation.addClass('is-hidden').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
-						//wait for the menu to be closed and do the rest
-						mainNavigation.removeClass('is-visible is-hidden has-transitions');
-						navigationContainer.removeClass('is-fixed');
-						$('.cd-nav-trigger').removeClass('menu-is-open');
+		// Nav Panel.
+
+			// Toggle.
+				$navPanelToggle = $(
+					'<a href="#navPanel" id="navPanelToggle">Menu</a>'
+				)
+					.appendTo($wrapper);
+
+				// Change toggle styling once we've scrolled past the header.
+					$header.scrollex({
+						bottom: '5vh',
+						enter: function() {
+							$navPanelToggle.removeClass('alt');
+						},
+						leave: function() {
+							$navPanelToggle.addClass('alt');
+						}
 					});
 
-					//check if the menu is open when scrolling up - fallback if transitions are not supported
-				} else if(mainNavigation.hasClass('is-visible') && $('html').hasClass('no-csstransitions')) {
-					mainNavigation.removeClass('is-visible has-transitions');
-					navigationContainer.removeClass('is-fixed');
-					$('.cd-nav-trigger').removeClass('menu-is-open');
+			// Panel.
+				$navPanel = $(
+					'<div id="navPanel">' +
+						'<nav>' +
+						'</nav>' +
+						'<a href="#navPanel" class="close"></a>' +
+					'</div>'
+				)
+					.appendTo($body)
+					.panel({
+						delay: 500,
+						hideOnClick: true,
+						hideOnSwipe: true,
+						resetScroll: true,
+						resetForms: true,
+						side: 'right',
+						target: $body,
+						visibleClass: 'is-navPanel-visible'
+					});
 
-					//scrolling up with menu closed
-				} else {
-					navigationContainer.removeClass('is-fixed');
-					mainNavigation.removeClass('has-transitions');
-				}
+				// Get inner.
+					$navPanelInner = $navPanel.children('nav');
+
+				// Move nav content on breakpoint change.
+					var $navContent = $nav.children();
+
+					skel.on('!medium -medium', function() {
+
+						// NavPanel -> Nav.
+							$navContent.appendTo($nav);
+
+						// Flip icon classes.
+							$nav.find('.icons, .icon')
+								.removeClass('alt');
+
+					});
+
+					skel.on('+medium', function() {
+
+						// Nav -> NavPanel.
+						$navContent.appendTo($navPanelInner);
+
+						// Flip icon classes.
+							$navPanelInner.find('.icons, .icon')
+								.addClass('alt');
+
+					});
+
+				// Hack: Disable transitions on WP.
+					if (skel.vars.os == 'wp'
+					&&	skel.vars.osVersion < 10)
+						$navPanel
+							.css('transition', 'none');
+
+		// Intro.
+			var $intro = $('#intro');
+
+			if ($intro.length > 0) {
+
+				// Hack: Fix flex min-height on IE.
+					if (skel.vars.browser == 'ie') {
+						$window.on('resize.ie-intro-fix', function() {
+
+							var h = $intro.height();
+
+							if (h > $window.height())
+								$intro.css('height', 'auto');
+							else
+								$intro.css('height', h);
+
+						}).trigger('resize.ie-intro-fix');
+					}
+
+				// Hide intro on scroll (> small).
+					skel.on('!small -small', function() {
+
+						$main.unscrollex();
+
+						$main.scrollex({
+							mode: 'bottom',
+							top: '25vh',
+							bottom: '-50vh',
+							enter: function() {
+								$intro.addClass('hidden');
+							},
+							leave: function() {
+								$intro.removeClass('hidden');
+							}
+						});
+
+					});
+
+				// Hide intro on scroll (<= small).
+					skel.on('+small', function() {
+
+						$main.unscrollex();
+
+						$main.scrollex({
+							mode: 'middle',
+							top: '15vh',
+							bottom: '-15vh',
+							enter: function() {
+								$intro.addClass('hidden');
+							},
+							leave: function() {
+								$intro.removeClass('hidden');
+							}
+						});
+
+				});
+
 			}
-		}
-	};
 
-	/* Random bg-img for header*/
-	var Annie_Random = function() {
-		//generate a random img that pre_name 'from 0 to 110'
-		var random_bg = Math.floor(Math.random() * 109 + 1);
+	});
 
-		//var bg = 'url(/img/random/' + random_bg + '.jpg)';
-		var bg = 'url(/img/random/' + random_bg + '.jpg)';
-
-		$("#header-bg-2").css("background-image", bg);
-	};
-
-	/* ToTop */
-	var Annie_ToTop = function() {
-		var upperLimit = 500;
-
-		// Our scroll link element
-		var scrollElem = $('#totop');
-
-		// Scroll to top speed
-		var scrollSpeed = 500;
-
-		scrollElem.hide();
-
-		$(window).scroll(function() {
-			var scrollTop = $(document).scrollTop();
-
-			if(scrollTop > upperLimit) {
-				$(scrollElem).stop().fadeTo(300, 1);
-			} else {
-				$(scrollElem).stop().fadeTo(300, 0);
-			}
-		});
-
-		$(scrollElem).click(function() {
-			$('html, body').animate({
-				scrollTop: 0
-			}, scrollSpeed);
-			return false;
-		});
-	};
-
-	/* Show Comment */
-	var Annie_Comment = function() {
-		function Show_Hidden(obj) {
-			var obj = $('#annie-comment-container');
-		}
-
-		var obutton = document.getElementById("annie-comment-button");
-		var odiv = document.getElementById("annie-comment-container");
-		//var obutton = $('#annie-comment-button');
-		//var odiv = $('#annie-comment-container');	
-		if('obutton') {
-			obutton.onclick = function() {
-				Show_Hidden(odiv);
-				$("#annie-comment-button").css("display", 'none');
-				return false;
-			}
-		}
-	};
-
-	/* other js function */
-	/* ... */
-
-	/* Initialize */
-	(function Annie_Init() {
-		Annie_Preloader();
-		Annie_Nav();
-		//Annie_Random();
-		Annie_ToTop();
-		//Annie_Comment();
-	})();
-});
+})(jQuery);
