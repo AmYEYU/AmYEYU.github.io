@@ -164,9 +164,9 @@
 				<p class="am-article-meta blog-text-center">
 					<span>
 						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/19/day2/" itemprop="url">
-	<time datetime="2018-11-19T12:58:56.895Z" itemprop="datePublished">
-  		2018-11-19
+						<a href="/2018/11/20/python内存管理机制/" itemprop="url">
+	<time datetime="2018-11-20T11:23:40.613Z" itemprop="datePublished">
+  		2018-11-20
   </time>
 </a>    
 &nbsp;
@@ -181,12 +181,28 @@
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
 					
-						<p>#day1作业<br>1.写代码获取数字1234中的十位上和百位上的数字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">number = 1234</span><br><span class="line">print(number//10%10)</span><br><span class="line"># 3</span><br><span class="line">number = 1234</span><br><span class="line">print(number//100%10)</span><br><span class="line"># 2</span><br></pre></td></tr></table></figure></p>
-<p>2.如果变量n的值是6784, 以下表达式的结果是多少？<br>n / 1000 % 100    # 6.784<br>n % 1000 / 100   # 7.84<br>n // 100 % 10      # 7<br> n // 10  % 100 // 10   #7</p>
-<p>3.表达式 10 / 4 + 23 // 4 * 2 - 30 的结果是多少?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(10 / 4 + 23 // 4 * 2 - 30)</span><br><span class="line"></span><br><span class="line">#-17.5</span><br></pre></td></tr></table></figure></p>
-<p>4.写出下面每一行中n3的结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n1 = 4; n2 = 5</span><br><span class="line">n3 = n1 &gt;n2      #False</span><br><span class="line">n3 = n1&lt;n2        #True</span><br><span class="line">n3 = n1==4        #True</span><br><span class="line">n3 = n1!=4         #False</span><br><span class="line">n3 = n1 == 1+3    #True</span><br></pre></td></tr></table></figure></p>
-<p>5.写出以下代码执行完成后，num的结果<br>num  = 10<br>num /= 2<br>num += 10 <em> 10 / 4 + 2</em>3**2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num  = 10</span><br><span class="line">num /= 2</span><br><span class="line">num += 10 * 10 / 4 + 2*3**2</span><br><span class="line">print(num)</span><br><span class="line">#48</span><br></pre></td></tr></table></figure></p>
-<p>6.下面定义<br>变量正确的是(a,d)<br>a. a = b = c = 10<br>b. a, c = 10<br>c. in = 20<br>d. num = 10; t = 20</p>
+						<p>#内存管理机制<br>一、python中变量的赋值</p>
+<p>掌握：<br>（1）、数字、字符串、布尔值的缓存<br>（2）、垃圾回收机制中的引用计数机制</p>
+<p>python中所有的数据都是对象，所有的变量都是对象的引用。</p>
+<p>python对数字、字符串和布尔对象进行缓存，让不同的变量赋同样值的这些对象，给得地址是同样的地址。</p>
+<p>总结：<br>1、给一个变量赋值的时候，赋的是数字、字符串、布尔的时候，会先在缓存中看是否存在这个值，若有直接将值对应的地址赋给变量。没有就在缓存中开辟空间存储数据，然后返回地址。<br>2、给一个变量赋值的时候，赋的是除了数字、字符串、布尔以外的值，就直接在内存中开辟空间存储值，返回地址。</p>
+<p>一个变量存了一个对象的地址，那么这个变量就是这个对象的引用。</p>
+<p>二、python中的内存管理</p>
+<p>C的内存管理机制：手动<br>java/oc/python等：拥有一套属于自己的自动内存管理机制。</p>
+<p>1、python通过垃圾回收机制来对内存进行管理的：不定时对程序中的对象进行检测，看是否需要回收（将对象的内存释放）。看是否需要回收旧看对象的引用计数是否为0，为0就回收。</p>
+<p>2、引用计数<br>python中的每个对象在创建的时候就会有一个属性叫引用计数，对应的值是 0 。当对象被引用一次，其引用计数就会加 1 。 当对象的引用减少一个，其引用计数就会减 1 。</p>
+<p>from sys import getrefcount</p>
+<p>object1 = [1, 2]<br>object2 = object1<br>a = [object1, 2]<br>print(getrefcount(object1))  #查看引用计数</p>
+<h1 id="getrefcount函数本身会对查看的对象进行一次引用"><a href="#getrefcount函数本身会对查看的对象进行一次引用" class="headerlink" title="getrefcount函数本身会对查看的对象进行一次引用"></a>getrefcount函数本身会对查看的对象进行一次引用</h1><p>4<br>三、垃圾回收机制</p>
+<p>垃圾回收机制并不是一旦产生引用计数为 0 的对象就马上回收。而是不定时的对整个程序中的所有对象进行检测，检测对象为 0 才回收。</p>
+<p>检测时间：当当前程序所有的对象引用计数变化的次数达到它的阈值才会对对象进行检测。</p>
+<p>import gc</p>
+<h1 id="获取垃圾回收临界值"><a href="#获取垃圾回收临界值" class="headerlink" title="获取垃圾回收临界值"></a>获取垃圾回收临界值</h1><p>print(gc.get_threshold())</p>
+<h1 id="修改垃圾回收临界值"><a href="#修改垃圾回收临界值" class="headerlink" title="修改垃圾回收临界值"></a>修改垃圾回收临界值</h1><p>print(gc.set_threshold(500, 10, 10))<br>四、循环引用</p>
+<p>python的垃圾回收机制能够自动解决因为循环引用而导致的内存泄漏问题。</p>
+<p>python里面自动解决循环引用问题引用的其他的引用对象</p>
+<p>检测的时候如果对象（object_i）的引用计数不是0，就备份引用计数值（count_i），去找到引用对象的对象（object_j），然后将（object_j）的引用计数（count_j）减1，如果（count_j）减1后的值是0，那么（count_i）的值就减1，如果减完后的（count_i）的值也是0，那么（object_j）也销毁。</p>
+<p>作者：Deathfeeling<br>链接：<a href="https://www.jianshu.com/p/31096169151b" target="_blank" rel="noopener">https://www.jianshu.com/p/31096169151b</a><br>來源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
 
 					
 				</div>
@@ -196,14 +212,14 @@
 		<ul class="am-pagination">
     
     	<li class="am-pagination-prev">
-   		<a class="pull-left" href="/2018/11/19/day2进制和字符串/" title="">
+   		<a class="pull-left" href="/2018/11/20/socket编程/" title="">
       		&laquo; 上一篇
 		</a>
 		</li>
 	
 	
 		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/11/19/day1/" title="">
+		<a class="pull-right" href="/2018/11/19/字符串的内建函数/" title="">
 			下一篇 &raquo;
 		</a>
 		</li>
@@ -287,6 +303,18 @@
 	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
 -->
 
+	
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				
+					<strong>文章目录</strong>
+				
+				
+				<!--toc(post.content)-->
+				<ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#getrefcount函数本身会对查看的对象进行一次引用"><span class="post-toc-text">getrefcount函数本身会对查看的对象进行一次引用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#获取垃圾回收临界值"><span class="post-toc-text">获取垃圾回收临界值</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改垃圾回收临界值"><span class="post-toc-text">修改垃圾回收临界值</span></a></li></ol>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</div></div></aside>
 	
 
 	</div>
